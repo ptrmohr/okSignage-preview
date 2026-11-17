@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<signage page="franzbroetchen" currency="EUR" version="01">
+  <heading>Franzbrötchen</heading>
+  <subheading>XXL · täglich frisch gebacken</subheading>
+  <column id="single">1 Stück</column>
+  <column id="triple">3 Stück</column>
+  <!-- Entwurfspreise aus älterer HBB-Franzbrötchen-XXL-Grafik.
+       Vor Veröffentlichung im Laden mit aktueller Preisliste abgleichen. -->
+  <products>
+    <product id="klassisch"><name>Klassisch</name><description>Mit Zimt &amp; Zucker</description><single>1,00 €</single><triple>2,50 €</triple></product>
+    <product id="streusel"><name>Streusel</name><description>Mit knusprigen Streuseln</description><single>1,00 €</single><triple>2,50 €</triple></product>
+    <product id="schoko"><name>Schoko</name><description>Mit Schokoladenstreifen</description><single>1,00 €</single><triple>2,50 €</triple></product>
+  </products>
+  <footer>Variationen nach Wahl · Solange der Vorrat reicht!</footer>
+</signage>

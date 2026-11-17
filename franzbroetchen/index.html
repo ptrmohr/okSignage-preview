@@ -2,45 +2,40 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OK Signage · Franzbrötchen · Entwurf 03</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OK Signage · Franzbrötchen · Getrennte Ebenen</title>
 <style>
-:root{color-scheme:dark;--cream:#efc7a1}
+:root{--cream:#efc7a1}
 *{box-sizing:border-box}
 html,body{margin:0;background:#151516;color:#ece3d7;font:14px/1.4 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
-body{min-height:100vh}
-.toolbar{position:relative;z-index:3;max-width:1420px;margin:auto;padding:15px 14px 8px;display:flex;align-items:center;gap:10px}
-.toolbar-title{display:flex;flex-direction:column;gap:0;margin-right:auto}
-.toolbar-title strong{font-size:17px}
-.toolbar-title span{font-size:12px;color:#aeaaa5}
+.toolbar{max-width:1420px;margin:auto;padding:15px 14px 8px}
+.toolbar strong{font-size:17px;display:block}.toolbar span{font-size:12px;color:#aeaaa5}
 .workspace{width:min(96vw,1420px);margin:9px auto 0}
-.frame{width:100%;aspect-ratio:1672/941;position:relative;overflow:hidden;outline:1px solid #4a4040;background:#45403d;box-shadow:0 15px 60px rgba(0,0,0,.45)}
-.design{position:absolute;left:0;top:0;width:1672px;height:941px;transform-origin:top left;overflow:hidden;user-select:none}
-.board-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.frame{width:100%;aspect-ratio:1672 / 941;position:relative;overflow:hidden;outline:1px solid #4a4040;box-shadow:0 15px 60px rgba(0,0,0,.45)}
+.design{position:absolute;top:0;left:0;width:1672px;height:941px;transform-origin:top left;overflow:hidden;user-select:none;background:#494340}
+.background{position:absolute;inset:0;background:radial-gradient(ellipse 900px 730px at 20% 72%,#5c524c 0%,#4c4542 63%,transparent 100%),radial-gradient(ellipse 1200px 900px at 83% 5%,#554e4a 0%,transparent 80%),linear-gradient(120deg,#49413e 0%,#47413e 60%,#3c3736 100%)}
+.grain{position:absolute;inset:0;opacity:.095;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.44' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath filter='url(%23n)' opacity='.28' d='M0 0h140v140H0z'/%3E%3C/svg%3E")}
+/* Ausschließlich das Logo aus der oberen linken kaffeefreien Bildregion */
+.watermark{position:absolute;left:0;top:0;width:520px;height:290px;background:url('../assets/HBB_Kaffee_Arbeitsgrundlage_v2_Titel_10Prozent.png') 0 0 / 1672px 941px no-repeat;opacity:.8;pointer-events:none;-webkit-mask-image:linear-gradient(to right,#000 0%,#000 70%,transparent 100%),linear-gradient(to bottom,#000 0%,#000 75%,transparent 100%);mask-image:radial-gradient(ellipse at 36% 30%,#000 35%,transparent 79%)}
+/* Echte freigestellte Franzbrötchen als eigene oberste Bildebene. Keine zusammengesetzte Kaffee-Szene. */
+.pastries{position:absolute;left:85px;top:233px;width:1055px;height:auto;object-fit:contain;filter:drop-shadow(16px 29px 23px rgba(21,14,12,.32));pointer-events:none}
 .heading{position:absolute;left:740px;top:59px;color:var(--cream);font-family:Montserrat,Inter,"Arial Black","Segoe UI",Arial,sans-serif;font-size:94px;font-weight:850;line-height:1.12;letter-spacing:-.026em;white-space:nowrap}
-.footnote{width:min(96vw,1420px);margin:12px auto 35px;color:#aaa29d;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;font-size:12px}
-@media(max-width:700px){.toolbar{padding:8px}.toolbar-title{width:100%}.footnote{padding:0 8px}}
+.footnote{width:min(96vw,1420px);margin:12px auto 35px;color:#aaa29d;font-size:12px}
+@media(max-width:700px){.toolbar{padding:8px}.footnote{padding:0 8px}}
 </style>
 </head>
 <body>
-<div class="toolbar">
- <div class="toolbar-title"><strong>OK Signage · Franzbrötchen</strong><span>Entwurf 03 · Drei Franzbrötchen gestaffelt · HTML-Titel · noch keine Preisboxen</span></div>
-</div>
-<main class="workspace">
- <div class="frame" id="frame" aria-label="Franzbrötchen Gestaltung auf Coffee-Brothers-Hintergrund">
-  <div class="design" id="design">
-   <img class="board-image" src="assets/franz_komposition_v03.png" alt="Drei gestaffelte Franzbrötchen auf dunklem HBB-Coffee-Brothers-Hintergrund mit schrägem Wasserzeichen" draggable="false">
-   <div class="heading">Franzbrötchen</div>
-  </div>
- </div>
-</main>
-<footer class="footnote"><span>Gestaltungsstand 03 · Hintergrund und Franzbrötchen als eigene Grafikebene, Überschrift als HTML-Text</span><span>Preise und Sortenbezeichnungen folgen später</span></footer>
+<header class="toolbar"><strong>OK Signage · Franzbrötchen</strong><span>Getrennte Ebenen · 16:9 · nur Überschrift</span></header>
+<main class="workspace"><div class="frame" id="frame"><div class="design" id="design">
+<div class="background"></div><div class="grain"></div><div class="watermark" aria-hidden="true"></div>
+<img class="pastries" src="assets/franzbroetchen_gruppe_freigestellt.png" alt="Drei freigestellte Franzbrötchen" draggable="false">
+<div class="heading">Franzbrötchen</div>
+</div></div></main>
+<footer class="footnote">Franzbrötchen und Hintergrund liegen separat. Keine eingebrannte Kaffee-Tasse.</footer>
 <script>
 'use strict';
-const frame=document.getElementById('frame');
-const design=document.getElementById('design');
-function resize(){design.style.transform='scale('+(frame.getBoundingClientRect().width/1672)+')';}
+const frame=document.getElementById('frame'),design=document.getElementById('design');
+function resize(){design.style.transform='scale('+(frame.getBoundingClientRect().width/1672)+')'}
 window.addEventListener('resize',resize);resize();
 </script>
-</body>
-</html>
+</body></html>

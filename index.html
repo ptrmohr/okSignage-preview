@@ -24,6 +24,10 @@ button:focus-visible{outline:3px solid #ddd;outline-offset:2px}
 #htmlBackground,#textOverlay{display:none}
 #photoMotion{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;clip-path:inset(0 70% 0 0);pointer-events:none;opacity:0;transition:opacity .35s ease}
 #photoMotion.enabled{opacity:1}
+/* Nur der linke Produktbildbereich: Fotos für Café Crema und Cappuccino.
+   Alle Pixel der freigegebenen Grundgrafik bleiben als eigene Ebene erhalten. */
+.drink-photo{position:absolute;left:0;top:0;width:30%;height:100%;object-fit:cover;object-position:center 55%;pointer-events:none;opacity:0;transition:opacity .5s ease;background:#1d1817}
+.drink-photo.selected{opacity:1}
 /* Pixelgenaue, isolierte Schrift-Pixel aus der freigegebenen Originalgrafik.
    Kein Rechteck, keine Neusetzen der Originalschrift. */
 .text-brightening {position:absolute;left:551px;width:1042px;height:57px;opacity:0;
@@ -73,6 +77,9 @@ kbd{padding:2px 5px;background:#302d2d;border:1px solid #514b48;border-radius:4p
    <!-- Optional: aus vorhandener Vorlage algorithmisch entfernte Tabellen-Texte. Hintergrundeinzelheiten im Testmodus noch nicht final. -->
    <img id="htmlBackground" class="board-image" src="assets/kaffee_hintergrund_ohne_preise.png" alt="" draggable="false">
    <video id="photoMotion" src="assets/HBB_Kaffee_Animation_Ausgewaehlt_leichter_Dampf.mp4" muted loop autoplay playsinline preload="metadata"></video>
+   <!-- Austauschbilder nur für die linke 30%-Fotofläche. Latte Macchiato zeigt weiterhin das unveränderte Original. -->
+   <img class="drink-photo" data-photo="crema" src="https://images.unsplash.com/photo-1753572736770-6abc29d123d8?auto=format&amp;fit=crop&amp;w=820&amp;q=85" alt="Café Crema in dunkler Kaffeetasse" draggable="false">
+   <img class="drink-photo" data-photo="cappuccino" src="https://images.unsplash.com/photo-1547637646-be8dfb33d4ba?auto=format&amp;fit=crop&amp;w=820&amp;q=85" alt="Cappuccino mit Latte Art in dunkler Tasse" draggable="false">
    <div id="brightenedText" aria-hidden="true"></div>
    <div id="htmlText" class="html-text" aria-hidden="true">
     <div class="hdr"><span>Produkt</span><span>Klein</span><span>Mittel</span><span>Groß</span></div>
@@ -119,8 +126,8 @@ function choose(key){
  document.querySelectorAll('.text-brightening').forEach(el=>el.classList.toggle('selected',el.dataset.key===key));
  document.querySelectorAll('.menuline').forEach(el=>el.classList.toggle('selected',el.dataset.key===key));
  document.querySelectorAll('[data-item]').forEach(el=>el.classList.toggle('active',el.dataset.item===key));
- const missing=key!=='latte';
- $('status').textContent=`${item.name} hervorgehoben · `+(missing?'Für diesen Produktwechsel fehlt noch das freigestellte Einzelfoto; das bestehende Latte-Glas bleibt vorläufig stehen.':'Das originale Latte-Glas bleibt unverändert.');
+ document.querySelectorAll('.drink-photo').forEach(el=>el.classList.toggle('selected',el.dataset.photo===key));
+ $('status').textContent=`${item.name} hervorgehoben · `+(key==='latte'?'Das originale Latte-Glas bleibt unverändert.':key==='crema'||key==='cappuccino'?'Passendes Produktfoto im linken Bildbereich.':'Originalbild für dieses Getränk noch nicht ersetzt.');
 }
 function stopAuto(){if(timer){clearInterval(timer);timer=null;}$('auto').textContent='▶ Auto-Wechsel';$('auto').setAttribute('aria-pressed','false');}
 function next(){let i=rotation.indexOf(current);choose(rotation[(i+1)%rotation.length]);}

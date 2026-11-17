@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OK Signage · Franzbrötchen · Entwurf 03</title>
+<title>OK Signage · Franzbrötchen · Entwurf 04</title>
 <style>
 :root{color-scheme:dark;--cream:#efc7a1}
 *{box-sizing:border-box}
@@ -16,7 +16,13 @@ body{min-height:100vh}
 .workspace{width:min(96vw,1420px);margin:9px auto 0}
 .frame{width:100%;aspect-ratio:1672/941;position:relative;overflow:hidden;outline:1px solid #4a4040;background:#45403d;box-shadow:0 15px 60px rgba(0,0,0,.45)}
 .design{position:absolute;left:0;top:0;width:1672px;height:941px;transform-origin:top left;overflow:hidden;user-select:none}
-.board-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.board-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;filter:brightness(1.12) saturate(.98)}
+/* Wasserzeichen direkt aus der bereits freigegebenen Kaffee-Grafik, nicht nachgezeichnet. */
+.coffee-watermark{position:absolute;left:0;top:0;width:440px;height:392px;pointer-events:none;
+ background-image:url('../assets/HBB_Kaffee_Arbeitsgrundlage_v2_Titel_10Prozent.png');
+ background-size:1672px 941px;background-position:0 0;background-repeat:no-repeat;
+ -webkit-mask-image:radial-gradient(ellipse 80% 81% at 47% 44%,#000 47%,transparent 99%);
+ mask-image:radial-gradient(ellipse 80% 81% at 47% 44%,#000 47%,transparent 99%);}
 .heading{position:absolute;left:740px;top:59px;color:var(--cream);font-family:Montserrat,Inter,"Arial Black","Segoe UI",Arial,sans-serif;font-size:94px;font-weight:850;line-height:1.12;letter-spacing:-.026em;white-space:nowrap}
 .footnote{width:min(96vw,1420px);margin:12px auto 35px;color:#aaa29d;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;font-size:12px}
 @media(max-width:700px){.toolbar{padding:8px}.toolbar-title{width:100%}.footnote{padding:0 8px}}
@@ -24,17 +30,18 @@ body{min-height:100vh}
 </head>
 <body>
 <div class="toolbar">
- <div class="toolbar-title"><strong>OK Signage · Franzbrötchen</strong><span>Entwurf 03 · Drei Franzbrötchen gestaffelt · HTML-Titel · noch keine Preisboxen</span></div>
+ <div class="toolbar-title"><strong>OK Signage · Franzbrötchen</strong><span>Entwurf 04 · Drei Franzbrötchen gestaffelt · HTML-Titel · noch keine Preisboxen</span></div>
 </div>
 <main class="workspace">
  <div class="frame" id="frame" aria-label="Franzbrötchen Gestaltung auf Coffee-Brothers-Hintergrund">
   <div class="design" id="design">
    <img class="board-image" src="assets/franz_komposition_v03.png" alt="Drei gestaffelte Franzbrötchen auf dunklem HBB-Coffee-Brothers-Hintergrund mit schrägem Wasserzeichen" draggable="false">
+   <div class="coffee-watermark" aria-hidden="true"></div>
    <div class="heading">Franzbrötchen</div>
   </div>
  </div>
 </main>
-<footer class="footnote"><span>Gestaltungsstand 03 · Hintergrund und Franzbrötchen als eigene Grafikebene, Überschrift als HTML-Text</span><span>Preise und Sortenbezeichnungen folgen später</span></footer>
+<footer class="footnote"><span>Gestaltungsstand 04 · Franzbrötchen unverändert · Original-Kaffee-Wasserzeichen eingeblendet</span><span>Preise und Sortenbezeichnungen folgen später</span></footer>
 <script>
 'use strict';
 const frame=document.getElementById('frame');

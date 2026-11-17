@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OK Signage · Kaffee · HTML/XML-Entwurf 03</title>
+<style>
+:root{color-scheme:dark;--cream:#efc7a1}
+*{box-sizing:border-box}
+html,body{margin:0;background:#151516;color:#ece3dc;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.toolbar{max-width:1450px;margin:auto;padding:13px 15px 2px;display:flex;align-items:center;gap:13px;flex-wrap:wrap}
+.toolbar-title{display:flex;flex-direction:column;gap:2px;margin-right:auto}.toolbar-title strong{font-size:17px}.toolbar-title span{font-size:12px;color:#aaa19c}
+.actions{display:flex;gap:8px;flex-wrap:wrap}button{background:#2b2929;color:#eee8e4;border:1px solid #484447;border-radius:9px;padding:9px 13px;cursor:pointer;font-weight:650;font-size:13px}button.selected{background:#e0c1a5;color:#261f1a;border-color:#e0c1a5}button:focus-visible{outline:3px solid white;outline-offset:2px}
+.workspace{width:min(96vw,1450px);margin:11px auto 0}.frame{aspect-ratio:1672/941;width:100%;position:relative;overflow:hidden;outline:1px solid #615653;box-shadow:0 18px 65px #0008}
+.design{width:1672px;height:941px;position:absolute;top:0;left:0;transform-origin:top left;overflow:hidden;color:var(--cream);user-select:none;isolation:isolate}
+.background{position:absolute;inset:0;background:radial-gradient(ellipse 550px 730px at 16% 70%,#695a50 0%,#4f4543 48%,transparent 100%),radial-gradient(ellipse 1200px 950px at 80% -45%,#605655,transparent 72%),linear-gradient(130deg,#47413f,#47403f 58%,#413c3c)}
+.watermark{position:absolute;left:680px;top:275px;transform:rotate(-32deg);white-space:nowrap;font-size:190px;font-weight:900;letter-spacing:-13px;opacity:.043;color:#e7c0a7}
+.heading{position:absolute;left:156px;top:45px;width:1370px;font-size:94px;font-weight:850;letter-spacing:-2.8px;white-space:nowrap;line-height:1.06;font-family:Montserrat,Inter,"Arial Black","Segoe UI",Arial,sans-serif}
+.heroShadow{position:absolute;top:772px;left:114px;width:370px;height:60px;border-radius:50%;background:#211915a9;filter:blur(30px)}
+.hero{position:absolute;opacity:0;pointer-events:none;transition:opacity .42s ease;filter:drop-shadow(8px 18px 12px #2418134d)}
+.hero.active{opacity:1}
+.hero[data-drink=latte]{left:105px;top:218px;width:367px;height:620px;object-fit:contain}
+.hero[data-drink=cappuccino]{left:53px;top:212px;width:478px;height:637px;object-fit:contain}
+.hero[data-drink=crema]{left:53px;top:212px;width:478px;height:637px;object-fit:contain}
+.table{position:absolute;left:564px;top:207px;width:1023px;font-family:Montserrat,Inter,"Arial Black","Segoe UI",Arial,sans-serif;font-weight:800;letter-spacing:-.018em;line-height:1.08}
+.tableHeader{display:grid;grid-template-columns:419px 215px 218px 1fr;height:55px;font-size:40px;align-items:center}
+.tableRows{position:absolute;left:0;top:65px;width:100%}
+.productRow{display:grid;grid-template-columns:419px 215px 218px 1fr;align-items:center;height:54px;margin-bottom:0;font-size:39px;transition:color .42s,text-shadow .42s;white-space:nowrap;cursor:pointer;background:none;border:0;border-radius:0;padding:0;width:100%;font-family:inherit;font-weight:inherit;letter-spacing:inherit;color:var(--cream);text-align:left}
+.productRow.active{color:#fff9e9;text-shadow:0 0 6px #ffe8bdb0,0 0 15px #ffe9b975}
+.productRow:hover{color:#fff6dd}
+.espresso{position:absolute;left:564px;top:674px;width:850px;display:grid;grid-template-columns:421px 215px 1fr;grid-template-rows:50px 58px;align-items:center;font-size:42px;font-weight:830;font-family:Montserrat,Inter,"Arial Black","Segoe UI",Arial,sans-serif}
+.additions{position:absolute;left:556px;top:814px;display:flex;gap:75px;white-space:nowrap;font-weight:780;font-size:36px;font-style:italic;font-family:Montserrat,Inter,"Arial Black","Segoe UI",Arial,sans-serif}
+.footnote{width:min(96vw,1450px);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin:13px auto 28px;color:#ad9e97;font-size:12px}.footnote strong{color:#e8c2a4}
+@media(max-width:750px){.toolbar-title{width:100%}.toolbar{padding:8px}.actions button{padding:7px 9px}}
+@media(prefers-reduced-motion:reduce){.hero,.productRow{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="toolbar"><div class="toolbar-title"><strong>OK Signage · Kaffee</strong><span>HTML/XML-Entwurf 03 · Originalseite bleibt unverändert</span></div>
+<div class="actions"><button data-pick="crema" type="button">Café Crema</button><button data-pick="cappuccino" type="button">Cappuccino</button><button data-pick="latte" type="button" class="selected">Latte Macchiato</button><button id="auto" type="button" aria-pressed="false">▶ Auto-Wechsel</button></div>
+</header>
+<main class="workspace"><div class="frame" id="frame"><div class="design" id="design">
+<div class="background"></div><div class="watermark">HBB STORE</div>
+<div class="heading" id="heading">Kaffee &amp; Heißgetränke</div><div class="heroShadow"></div>
+<img class="hero active" data-drink="latte" src="assets/latte-original.png" alt="Latte Macchiato im hohen Glas" draggable="false">
+<img class="hero" data-drink="crema" src="assets/crema-glas.png" alt="Café Crema ohne Milch im hohen Glas" draggable="false">
+<img class="hero" data-drink="cappuccino" src="assets/cappuccino-glas.png" alt="Cappuccino mit Blumenmuster im hohen Glas" draggable="false">
+<section class="table" aria-label="Kaffeeprodukte und Preise"><div class="tableHeader"><span id="h0">Produkt</span><span id="h1">Klein</span><span id="h2">Mittel</span><span id="h3">Groß</span></div><div id="rows" class="tableRows"></div></section>
+<div class="espresso" id="espresso"></div><div class="additions" id="additions"></div>
+</div></div></main>
+<footer class="footnote"><span><strong>Preise:</strong> HTML-Texte aus <code>preise.xml</code>; Basiswerte aus der freigegebenen Gestaltung, nicht mit der Kasse abgeglichen.</span><span id="status" role="status"></span></footer>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const basic=[['filter','Filterkaffee','1,00 €','1,50 €','2,00 €'],['crema','Café Crema','1,80 €','2,50 €','2,90 €'],['cappuccino','Cappuccino','1,80 €','2,50 €','2,90 €'],['milk','Milchkaffee','1,80 €','2,50 €','2,90 €'],['latte','Latte Macchiato','1,80 €','2,50 €','2,90 €'],['tea','Tee','1,80 €','2,50 €','2,90 €'],['cocoa','Kakao','1,80 €','2,50 €','2,90 €']];
+const defaults={heading:'Kaffee & Heißgetränke',columns:['Produkt','Klein','Mittel','Groß'],rows:basic,espresso:['Espresso','Einfach','Doppelt','1,80 €','2,50 €'],additions:['Hafermilch +0,50 €','Mandelmilch +0,50 €']};
+let current='latte',data=defaults,timer=null,xmlLoaded=false;
+function resize(){let w=$('frame').getBoundingClientRect().width;$('design').style.transform=`scale(${w/1672})`;}window.addEventListener('resize',resize);resize();
+function render(){
+ $('heading').textContent=data.heading;data.columns.forEach((x,i)=>$('h'+i).textContent=x);
+ const list=$('rows');list.replaceChildren();
+ for(const item of data.rows){const row=document.createElement('button');row.type='button';row.className='productRow';row.dataset.key=item[0];row.setAttribute('aria-label',item[1]);for(const value of item.slice(1)){const sp=document.createElement('span');sp.textContent=value;row.append(sp)}row.addEventListener('click',()=>{select(item[0]);stopAuto()});list.append(row)}
+ const esp=$('espresso');esp.replaceChildren();
+ const E=data.espresso;for(const v of ['',E[1],E[2],E[0],E[3],E[4]]){const span=document.createElement('span');span.textContent=v;esp.append(span)}
+ const add=$('additions');add.replaceChildren();for(const v of data.additions){const el=document.createElement('span');el.textContent=v;add.append(el)}
+ select(current);
+}
+function select(key){current=key;document.querySelectorAll('.productRow').forEach(x=>x.classList.toggle('active',x.dataset.key===key));document.querySelectorAll('[data-pick]').forEach(x=>x.classList.toggle('selected',x.dataset.pick===key));
+ const visible=['crema','cappuccino'].includes(key)?key:'latte';document.querySelectorAll('.hero').forEach(x=>x.classList.toggle('active',x.dataset.drink===visible));$('status').textContent=(data.rows.find(x=>x[0]===key)?.[1]||'')+' hervorgehoben · '+(xmlLoaded?'XML-Preise geladen':'Vorschaudaten');}
+function stopAuto(){if(timer)clearInterval(timer);timer=null;$('auto').textContent='▶ Auto-Wechsel';$('auto').setAttribute('aria-pressed','false')}
+function next(){const a=['crema','cappuccino','latte'];select(a[(a.indexOf(current)+1)%a.length])}
+$('auto').addEventListener('click',()=>{if(timer){stopAuto();return}next();timer=setInterval(next,5500);$('auto').textContent='■ Auto stoppen';$('auto').setAttribute('aria-pressed','true')});
+document.querySelectorAll('[data-pick]').forEach(x=>x.addEventListener('click',()=>{select(x.dataset.pick);stopAuto()}));
+const get=(n,q,f='')=>n.querySelector(q)?.textContent.trim()||f;
+async function load(){try{
+ const res=await fetch('./preise.xml',{cache:'no-store'});if(!res.ok)throw Error('HTTP '+res.status);
+ const xml=new DOMParser().parseFromString(await res.text(),'application/xml');if(xml.querySelector('parsererror'))throw Error('Ungültiges XML');
+ const root=xml.querySelector('signage');if(!root)throw Error('Keine signage-Wurzel');
+ const rows=[...root.querySelectorAll('products>product')].map(p=>[p.getAttribute('id'),p.getAttribute('name'),get(p,'small'),get(p,'medium'),get(p,'large')]);
+ if(rows.length!==7)throw Error('Sieben Produkte erwartet');const esp=root.querySelector('espresso');
+ data={heading:get(root,'heading',defaults.heading),columns:[...root.querySelectorAll('columns>column')].map(x=>x.textContent.trim()),rows,espresso:[esp.getAttribute('name'),'Einfach','Doppelt',get(esp,'single'),get(esp,'double')],additions:[...root.querySelectorAll('additions>addition')].map(x=>x.textContent.trim())};
+ if(data.columns.length!==4||data.additions.length!==2)throw Error('Ungültiges Datenformat');xmlLoaded=true;
+}catch(err){console.warn('Keine XML-Datei eingelesen:',err);xmlLoaded=false}render()}
+render();load();
+</script>
+</body></html>

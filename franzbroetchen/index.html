@@ -13,10 +13,10 @@ html,body{margin:0;background:#151516;color:#ece3d7;font:14px/1.4 system-ui,-app
 .workspace{width:min(96vw,1420px);margin:9px auto 0}
 .frame{width:100%;aspect-ratio:1672 / 941;position:relative;overflow:hidden;outline:1px solid #4a4040;box-shadow:0 15px 60px rgba(0,0,0,.45)}
 .design{position:absolute;top:0;left:0;width:1672px;height:941px;transform-origin:top left;overflow:hidden;user-select:none;background:#494340}
-.background{position:absolute;inset:0;background:radial-gradient(ellipse 900px 730px at 20% 72%,#5c524c 0%,#4c4542 63%,transparent 100%),radial-gradient(ellipse 1200px 900px at 83% 5%,#554e4a 0%,transparent 80%),linear-gradient(120deg,#49413e 0%,#47413e 60%,#3c3736 100%)}
+.background{position:absolute;inset:0;background:radial-gradient(ellipse 550px 730px at 16% 70%,#695a50 0%,#4f4543 48%,transparent 100%),radial-gradient(ellipse 1200px 950px at 80% -45%,#605655,transparent 72%),linear-gradient(130deg,#47413f,#47403f 58%,#413c3c)}
 .grain{position:absolute;inset:0;opacity:.095;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.44' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath filter='url(%23n)' opacity='.28' d='M0 0h140v140H0z'/%3E%3C/svg%3E")}
-/* Ausschließlich das Logo aus der oberen linken kaffeefreien Bildregion */
-.watermark{position:absolute;left:0;top:0;width:520px;height:290px;background:url('../assets/HBB_Kaffee_Arbeitsgrundlage_v2_Titel_10Prozent.png') 0 0 / 1672px 941px no-repeat;opacity:.8;pointer-events:none;-webkit-mask-image:linear-gradient(to right,#000 0%,#000 70%,transparent 100%),linear-gradient(to bottom,#000 0%,#000 75%,transparent 100%);mask-image:radial-gradient(ellipse at 36% 30%,#000 35%,transparent 79%)}
+/* Exakt dieselbe Hintergrund-/Wasserzeichen-Definition wie in kaffee-html/index.html */
+.watermark{position:absolute;left:680px;top:275px;transform:rotate(-32deg);white-space:nowrap;font-size:190px;font-weight:900;letter-spacing:-13px;opacity:.043;color:#e7c0a7}
 /* Echte freigestellte Franzbrötchen als eigene oberste Bildebene. Keine zusammengesetzte Kaffee-Szene. */
 .pastries{position:absolute;left:85px;top:233px;width:1055px;height:auto;object-fit:contain;filter:drop-shadow(16px 29px 23px rgba(21,14,12,.32));pointer-events:none}
 .heading{position:absolute;left:740px;top:59px;color:var(--cream);font-family:Montserrat,Inter,"Arial Black","Segoe UI",Arial,sans-serif;font-size:94px;font-weight:850;line-height:1.12;letter-spacing:-.026em;white-space:nowrap}
@@ -27,7 +27,7 @@ html,body{margin:0;background:#151516;color:#ece3d7;font:14px/1.4 system-ui,-app
 <body>
 <header class="toolbar"><strong>OK Signage · Franzbrötchen</strong><span>Getrennte Ebenen · 16:9 · nur Überschrift</span></header>
 <main class="workspace"><div class="frame" id="frame"><div class="design" id="design">
-<div class="background"></div><div class="grain"></div><div class="watermark" aria-hidden="true"></div>
+<div class="background"></div><div class="grain"></div><div class="watermark" aria-hidden="true">HBB STORE</div>
 <img class="pastries" src="assets/franzbroetchen_gruppe_freigestellt.png" alt="Drei freigestellte Franzbrötchen" draggable="false">
 <div class="heading">Franzbrötchen</div>
 </div></div></main>

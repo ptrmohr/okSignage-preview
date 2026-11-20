@@ -1,14 +1,14 @@
 # OK Signage – VERBINDLICHER STARTPUNKT (20.11.2026)
 
-## NEUER PRÜFSTAND: HBB-Kaffee V13 – Latteglas-Perspektive (20.11.2026)
+## FREIGEGEBENER RELEASE / AKTUELLER IST-STAND: HBB-Kaffee V13 (20.11.2026)
 
 **Live-HTML:** https://ptrmohr.github.io/okSignage-preview/hbb-kaffee-v13/
 
-**Status:** V13 noch nicht abgenommen. V12 bleibt als **freigegebener Ist-Stand** erhalten und darf nicht verändert werden.
+**Status:** V13 am 20.11.2026 vom Nutzer ausdrücklich freigegeben: „Perfekt so. Lass es genau so. Die Nummer wird released so.“ **Nicht mehr verändern.** V12 bleibt als vorherige freigegebene Version erhalten. Künftige Layout-Änderungen nur in V14 oder höher.
 
-**Genau eine Änderung an V13:** Der Latte Macchiato erhält das neue, transparente Bild `hbb-kaffee-v13/assets/latte-macchiato-v13.png` mit stärkerer Draufsicht und saubererer rechter Glaskante. Die Größe/Position ist für den Glasbereich links angepasst (`left:48px;top:164px;width:478px;height:710px`). Cappuccino/Café Crema, sämtliche Preise/Schriften/Animation, Hintergrund mit rotierendem Engel und der automatische Glaswechsel sind aus V12 unverändert übernommen. Die XML-Preise sind historische Beispielwerte. **Nutzer soll V13 im Browser prüfen und ggf. Perspektive/Größe des Latteglases korrigieren lassen.**
+**Genau eine Änderung an V13:** Der Latte Macchiato erhält das neue, transparente Bild `hbb-kaffee-v13/assets/latte-macchiato-v13.png` mit stärkerer Draufsicht und saubererer rechter Glaskante. Die Größe/Position ist für den Glasbereich links angepasst (`left:48px;top:164px;width:478px;height:710px`). Cappuccino/Café Crema, sämtliche Preise/Schriften/Animation, Hintergrund mit rotierendem Engel und der automatische Glaswechsel sind aus V12 unverändert übernommen. **Texte und Preise sind keine Bilder:** Die Webseite lädt `hbb-kaffee-v13/preise.xml` und stellt Überschrift, Spalten, Produktnamen und Preise als echte DOM-Textknoten dar; diese Werte sind dort editierbar. Die XML-Preise sind historische Beispielwerte und NICHT mit der Kasse validiert. **Abgenommen: Perspektive und Größe des Latteglases passen.**
 
-## FREIGEGEBENER IST-STAND: HBB-Kaffee V12 – 20.11.2026
+## VORHERIGER FREIGEGEBENER IST-STAND: HBB-Kaffee V12 – 20.11.2026
 
 **Live-HTML:** https://ptrmohr.github.io/okSignage-preview/hbb-kaffee-v12/
 

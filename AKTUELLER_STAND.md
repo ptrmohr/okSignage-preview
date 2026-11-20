@@ -1,5 +1,15 @@
 # OK Signage – VERBINDLICHER STARTPUNKT (20.11.2026)
 
+## NEUE FRANZBRÖTCHEN-VORSCHAU V01 – 20.11.2026
+
+**Live-Vorschau:** https://ptrmohr.github.io/okSignage-preview/hbb-franzbroetchen-v01/
+
+**HTML:** `hbb-franzbroetchen-v01/index.html` · **Status:** Prüfung durch Nutzer steht aus.
+
+Der freigegebene animierte Original-Hintergrund aus `hbb-hintergrund-v12/` ist **unverändert** als eigene Ebene eingebunden (wie in der abgenommenen Kaffee-V13). Der Titel „Franzbrötchen“ ist **echter HTML-Text** in der Kaffee-Überschriftengestaltung. Die bisherige freigestellte 3er-Komposition wurde **unverändert aus** `franzbroetchen/assets/franzbroetchen_gruppe_freigestellt.png` eingebunden, mit den Positionen aus dem historischen `franzbroetchen/index.html` (left:85px, top:233px, width:1055px). Die historische Projektseite hatte die Gebäckebene standardmäßig verborgen; in dieser Vorschau ist sie sichtbar. Noch keine Preise ergänzt, da nur Titel und bisherige Gebäck-Anordnung angefragt wurden.
+
+**Wichtig:** Freigegebene Kaffee-V13 nicht ändern. Franzbrötchen-Anpassungen ausschließlich in einer neuen Version dieses Seitenzweigs durchführen. Kein neuer Bildaufbau und keine Neuerzeugung der Gebäcke.
+
 ## FREIGEGEBENER RELEASE / AKTUELLER IST-STAND: HBB-Kaffee V13 (20.11.2026)
 
 **Live-HTML:** https://ptrmohr.github.io/okSignage-preview/hbb-kaffee-v13/

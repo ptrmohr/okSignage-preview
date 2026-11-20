@@ -1,4 +1,21 @@
-# OK Signage – START HIER / VERBINDLICHER PROJEKTLEITFADEN
+# OK Signage – VERBINDLICHER STARTPUNKT (20.11.2026)
+
+## FREIGEGEBEN: HBB-Hintergrund V10
+**Vorschau:** https://ptrmohr.github.io/okSignage-preview/hbb-hintergrund-v10/
+**HTML:** `hbb-hintergrund-v10/index.html`
+
+Exakte Kopie der vom Nutzer ausdrücklich bestätigten Hintergrundversion V03. Gleiches originales freigestelltes rundes Engel-Logo: `hbb-hintergrund-v01/assets/coffee_brothers_original.png`. Gleiches warmes Braun-Grau, `left:7%; top:-6%; width:112%; opacity:.16`, Kippung 30° via `rotateX`, Rotation im Uhrzeigersinn 120s. **V10 niemals bei Änderungen an Produktbildern/Schrift verändern.**
+
+## AKTUELLER KAFFEE-ENTWURF: V11 (noch nicht visuell freigegeben)
+**Vorschau:** https://ptrmohr.github.io/okSignage-preview/hbb-kaffee-v11/
+**HTML:** `hbb-kaffee-v11/index.html`
+**Preisdaten:** `hbb-kaffee-v11/preise.xml` (historische Musterwerte!)
+
+V11 lädt **V10 unverändert als Hintergrund-iframe**, so dass keine zweite Logo-Ebene entsteht. Darüber: Café-Crema-/Cappuccino-/Latte-Macchiato-Gläser aus `kaffee-html/assets/`, HTML-Preistafel und leuchtende Auswahl aus dem bestehenden `kaffee-html/index.html`-Entwurf. Bestehende Glas-Freistellung und Schriftoptik noch prüfen, besonders Café Crema. Die XML-Werte wurden übernommen, nicht gegen DailyPOS validiert. Erst nach Nutzersichtprüfung V11 als freigegeben markieren.
+
+**Unverzichtbarer Workflow:** Neue Änderungen NUR an `hbb-kaffee-v11/` bzw. als neue Version, V10 bleibt eingefroren. Github Pages Link direkt geben, keine neu generierten Gesamtgrafiken, keine lokalen ZIPs und keine CSS-Blöcke als Ersatz für die Browser-Vorschau. Historische Fassungen bewahren.
+
+---
 Stand: 20.11.2026
 
 ## Neue Vorschau zum Prüfen: HBB-Hintergrund V03 (20.11.2026)

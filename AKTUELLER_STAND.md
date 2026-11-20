@@ -1,3 +1,12 @@
+## FRANZBRÖTCHEN V02 – NEUE VORSCHAU / NOCH NICHT FREIGEGEBEN (20.11.2026)
+
+**Live:** https://ptrmohr.github.io/okSignage-preview/hbb-franzbroetchen-v02/
+**HTML:** `hbb-franzbroetchen-v02/index.html`
+**XML (Artikel/Preise):** `hbb-franzbroetchen-v02/preise.xml`
+**Draufsicht-Gebäckgruppe (transparent):** `hbb-franzbroetchen-v02/assets/franzbroetchen_draufsicht_v02.png`
+
+Gleiche unveränderte Hintergrund-HTML wie Kaffee-V13: `hbb-hintergrund-v12/`, mit langsam rotierendem Engel-Logo. Überschrift Franzbrötchen ungefähr drei Buchstaben nach links gerückt (left:12px) und bis dicht an den oberen Rand verschoben (top:-3px; volle Schrifthöhe weiter hoch würde sie sichtbar abschneiden). Klassisch, Schoko und Streusel aus direkter Draufsicht **untereinander**; ihre Namen echte HTML-Texte. Retro-Dauerangebots-Preisblase rechts: „Preise wie in den 90ern!“, 1 Stück 1,00 €, 3 Stück 2,50 €. Preiswerte stammen aus dem **historischen Entwurf**, **noch nicht als aktuelle Ladenpreise bestätigt**; HTML liest sie aus XML. Kaffee-V13 ist unverändert und freigegeben. V02 nur nach Nutzer-Sichtprüfung als gültig markieren.
+
 # OK Signage – VERBINDLICHER STARTPUNKT (20.11.2026)
 
 ## NEUE FRANZBRÖTCHEN-VORSCHAU V01 – 20.11.2026

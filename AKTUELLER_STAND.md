@@ -1,6 +1,11 @@
 # OK Signage – AKTUELLER STAND (verbindlicher Einstieg)
 
-**Aktuell: Kaffee V04 – Arbeitsstand; visuelle Freigabe ausstehend.**
+**Aktueller experimenteller Prüfstand: Kaffee V05 (3D-Wasserzeichen). V04 bleibt die unveränderte Ausgangsbasis. Keine visuelle Freigabe erteilt.**
+
+**V05 Vorschau:** https://ptrmohr.github.io/okSignage-preview/kaffee-v05/
+**V05 Quellcode:** `kaffee-v05/index.html`
+
+**WICHTIG:** Das Originallogo ist Bestandteil der großen PNG-Datei. V05 blendet testweise ein *zusätzliches* HTML-Wasserzeichen `HBB STORE` mit `rotateX(30deg)` und Fade ein, das per Kontrollkästchen ein-/ausgeschaltet werden kann. Das ist noch keine echte perspektivische Transformation des Original-Logos. Für eine korrekte Endfassung muss zuerst das originale Logo als eigene transparente Bild-Ebene isoliert und der Hintergrund darunter sauber rekonstruiert werden.
 
 **Vorschau:** https://ptrmohr.github.io/okSignage-preview/kaffee-v04/
 **Quellcode:** `kaffee-v04/index.html`
@@ -18,7 +23,8 @@
 - In V04 als separate HTML-Ebenen eingebunden; die Café-Crema-Freistellung, Proportionen und alle drei Positionen sind noch zu prüfen.
 
 ## Versionen und Status
-- **V04 `kaffee-v04/index.html`: aktueller Arbeitsstand, nicht visuell freigegeben.**
+- **V05 `kaffee-v05/index.html`: aktueller 3D-Test, nicht freigegeben.**
+- **V04 `kaffee-v04/index.html`: unveränderte Basis für den 3D-Test, nicht visuell freigegeben.**
 - `index.html`: archivierter Kaffee V02, Referenz für Originalgrafik, Schrift und Leuchten; ältere Fotos.
 - `kaffee-html/index.html`: archivierter V03-Test mit drei Glasdateien, aber nachgebautem Hintergrund.
 - `franzbroetchen/index.html`: unfertiger separater Entwurf; nicht aktuell als Hintergrundreferenz.

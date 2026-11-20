@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<signage page="kaffee" version="12" currency="EUR">
+ <heading>Kaffee &amp; Heißgetränke</heading>
+ <columns><column>Produkt</column><column>Klein</column><column>Mittel</column><column>Groß</column></columns>
+ <!-- Werte aus freigegebener Arbeitsgrundlage vom 16.11.2026, nicht gegen die Kasse validiert. -->
+ <products>
+  <product id="filter" name="Filterkaffee"><small>1,00 €</small><medium>1,50 €</medium><large>2,00 €</large></product>
+  <product id="crema" name="Café Crema"><small>1,80 €</small><medium>2,50 €</medium><large>2,90 €</large></product>
+  <product id="cappuccino" name="Cappuccino"><small>1,80 €</small><medium>2,50 €</medium><large>2,90 €</large></product>
+  <product id="milk" name="Milchkaffee"><small>1,80 €</small><medium>2,50 €</medium><large>2,90 €</large></product>
+  <product id="latte" name="Latte Macchiato"><small>1,80 €</small><medium>2,50 €</medium><large>2,90 €</large></product>
+  <product id="tea" name="Tee"><small>1,80 €</small><medium>2,50 €</medium><large>2,90 €</large></product>
+  <product id="cocoa" name="Kakao"><small>1,80 €</small><medium>2,50 €</medium><large>2,90 €</large></product>
+ </products>
+ <espresso name="Espresso"><single>1,80 €</single><double>2,50 €</double></espresso>
+ <additions><addition>Hafermilch +0,50 €</addition><addition>Mandelmilch +0,50 €</addition></additions>
+</signage>

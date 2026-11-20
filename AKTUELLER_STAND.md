@@ -1,5 +1,13 @@
 # OK Signage – VERBINDLICHER STARTPUNKT (20.11.2026)
 
+## NEUER PRÜFSTAND: HBB-Kaffee V13 – Latteglas-Perspektive (20.11.2026)
+
+**Live-HTML:** https://ptrmohr.github.io/okSignage-preview/hbb-kaffee-v13/
+
+**Status:** V13 noch nicht abgenommen. V12 bleibt als **freigegebener Ist-Stand** erhalten und darf nicht verändert werden.
+
+**Genau eine Änderung an V13:** Der Latte Macchiato erhält das neue, transparente Bild `hbb-kaffee-v13/assets/latte-macchiato-v13.png` mit stärkerer Draufsicht und saubererer rechter Glaskante. Die Größe/Position ist für den Glasbereich links angepasst (`left:48px;top:164px;width:478px;height:710px`). Cappuccino/Café Crema, sämtliche Preise/Schriften/Animation, Hintergrund mit rotierendem Engel und der automatische Glaswechsel sind aus V12 unverändert übernommen. Die XML-Preise sind historische Beispielwerte. **Nutzer soll V13 im Browser prüfen und ggf. Perspektive/Größe des Latteglases korrigieren lassen.**
+
 ## FREIGEGEBENER IST-STAND: HBB-Kaffee V12 – 20.11.2026
 
 **Live-HTML:** https://ptrmohr.github.io/okSignage-preview/hbb-kaffee-v12/

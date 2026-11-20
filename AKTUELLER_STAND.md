@@ -1,43 +1,70 @@
-# OK Signage – AKTUELLER STAND (verbindlicher Einstieg)
+# OK Signage – START HIER / VERBINDLICHER PROJEKTLEITFADEN
+Stand: 20.11.2026
 
-**WIEDERHERGESTELLTER REFERENZSTAND: Kaffee V04.** V05 und V06 sind abgelehnte Logo-Experimente und dürfen NICHT als Basis weiterer Änderungen verwendet werden.
+## 1. Aktuell bestätigte Gestaltung: HBB-Hintergrund V01
 
-**V04 Vorschau:** https://ptrmohr.github.io/okSignage-preview/kaffee-v04/
-**HTML:** `kaffee-v04/index.html`
+**Live-Vorschau:** https://ptrmohr.github.io/okSignage-preview/hbb-hintergrund-v01/
 
-**Korrekturauftrag (noch offen):** Das **originale grafische Hintergrundlogo** (nicht der Schriftzug „HBB STORE“) ausschließlich perspektivisch um etwa 30 Grad nach hinten kippen und leicht ausfaden. Kein zweites Logo hinzufügen, nicht die übrige Tafel verändern. Das Logo ist aktuell nicht als eigenständige transparente PNG im Repository nachweisbar. Vor neuer Version die Original-Logoebene wiederfinden oder sauber aus der vorhandenen Originalgrafik extrahieren. Keine erfundenen Logos oder Text-Wasserzeichen.
+**HTML:** `hbb-hintergrund-v01/index.html`
 
-## Original-Logo jetzt eindeutig gefunden (20.11.2026)
+**Original-Logo, transparent:** `hbb-hintergrund-v01/assets/coffee_brothers_original.png`
 
-- Google Drive → `HBBSignage/HBBLogosAi.zip`: https://drive.google.com/file/d/16BQPivd20cs5w6iTc_FuA1tvThE7aq_x/view
-- Datei darin: `Engel-Logo_peetRoundedSorted.ai` – **vollständiges rundes BROTHERS COFFEE & SNACKS Logo mit Engelmotiv**. Alternative Variante `Engel-Logo_peetRounded.ai`; außerdem getrennte Varianten `Engel-Logo_peet_lettersOnly.ai` und `Engel-Logo_peet_noLetters.ai`.
-- Die AI-Datei besitzt eine PDF-kompatible Vektorvorschau. Eine transparente PNG wurde daraus lokal erstellt; eigenständige HTML-Testvorschau (30° 3D-Kippung, Deckkraft regelbar) ist vorhanden. Das Logo wurde noch **nicht auf GitHub veröffentlicht**.
-- Keine nachgebaute „HBB STORE“-Schrift mehr anstelle des Engels verwenden. Keine Doppelbelegung mit dem in älteren Kaffee-PNGs vorhandenen Wasserzeichen. Für die Freigabe echte Logoebene vor sauberem Hintergrund verwenden.
+Dieser Hintergrund wurde vom Nutzer am 20.11. als „sehr gut“ bestätigt und anschließend in GitHub Pages veröffentlicht. Er ist die **aktuelle verbindliche Hintergrundreferenz** für künftige Signage-Tafeln (Kaffee, Franzbrötchen).
 
-## Hintergrund und Schrift – feste Referenz
-- `assets/HBB_Kaffee_Arbeitsgrundlage_v2_Titel_10Prozent.png`: freigegebene vollständige Kaffee-Originalgrafik inklusive Logo, Schrift und ursprünglichem Produktbereich.
-- `assets/glow_*.png`: isolierte Schriftpixel für die Leucht-Hervorhebung.
-- Beide Originalbestände **nicht überschreiben**.
-- In V04 wird der ältere linke Produktbildbereich mit `assets/OKSignage_Hintergrund_Freigestellt.png` überdeckt. Übergänge/Ränder dieser Abdeckung sind visuell noch zu prüfen.
+Verbindliche Optik:
+- Format 1672 × 941 (16:9-nahe Vorlage), HTML/CSS-Layout.
+- Originales **BROTHERS COFFEE & SNACKS Engel-Logo**, keine frei erfundenen Logos und kein Ersatztext „HBB STORE“.
+- Warmer grau-brauner radialer/linearer Hintergrundverlauf.
+- Logo **als separate PNG-Ebene**, nicht eingebrannt in die Hintergrundgrafik.
+- CSS: `left:-8%;top:24%;width:112%;opacity:.16;transform-origin:50% 75%;transform:rotate(-26deg) rotateX(30deg);` mit Verlaufsmaskierung. Logo erscheint dadurch sehr groß und **unten abgeschnitten**, nicht vollständig im Bild.
+- Nicht aus dem letzten Stand erneut eine Bildgenerierung machen. Für Änderungen **nur HTML/CSS** im GitHub-Repository ändern; Nutzer bekommt danach **nur den GitHub-Pages-Link**.
+- Vor einer Logoänderung die bestätigte Referenz nicht überschreiben: Kopie als nächste Version anlegen.
 
-## Drei Gläser – eigene Bildebenen
-- Latte: `kaffee-html/assets/latte-original.png`
-- Café Crema: `kaffee-html/assets/crema-glas.png`
-- Cappuccino: `kaffee-html/assets/cappuccino-glas.png`
-- In V04 als separate HTML-Ebenen eingebunden; die Café-Crema-Freistellung, Proportionen und alle drei Positionen sind noch zu prüfen.
+## 2. Logo-Herkunft / Wiederauffinden
 
-## Versionen und Status
-- **V05 `kaffee-v05/index.html`: verworfener Doppel-Logo-Test, NICHT aktuell.**
-- **V06 `kaffee-v06/index.html`: verworfener Text-Wasserzeichen-Test, NICHT aktuell.**
-- **V04 `kaffee-v04/index.html`: wiederhergestellte Referenzfassung; künftige Änderungen nur als Kopie und erst nach Sichtprüfung.**
-- `index.html`: archivierter Kaffee V02, Referenz für Originalgrafik, Schrift und Leuchten; ältere Fotos.
-- `kaffee-html/index.html`: archivierter V03-Test mit drei Glasdateien, aber nachgebautem Hintergrund.
-- `franzbroetchen/index.html`: unfertiger separater Entwurf; nicht aktuell als Hintergrundreferenz.
-- `franzbroetchen/hintergrund-referenz.html`: reine Original-Gesamtbildreferenz.
+Die Originale liegen unter **Google Drive → HBBSignage → HBBLogosAi.zip**:
+https://drive.google.com/file/d/16BQPivd20cs5w6iTc_FuA1tvThE7aq_x/view
 
-## Verbindliche Arbeitsweise
-1. Immer diesen Dateinamen **AKTUELLER_STAND.md** zuerst lesen, bevor weitergearbeitet wird.
-2. Den Hintergrund/Originalschrift in einem bestätigten Stand einfrieren; Produktfotos und spätere Franzbrötchen getrennt bearbeiten.
-3. Keine älteren Dateien löschen: Sie dienen als überprüfbares Archiv.
-4. Neue Entwicklungsstände V05 usw. versionieren. Erst nach expliziter Sichtfreigabe hier den Status „freigegeben“ vergeben.
-5. Musterpreise sind noch nicht gegen DailyPOS abgeglichen.
+Datei im ZIP: `Engel-Logo_peetRoundedSorted.ai`; weitere Originalvarianten `Engel-Logo_peetRounded.ai`, `Engel-Logo_peet_lettersOnly.ai`, `Engel-Logo_peet_noLetters.ai`.
+
+Die aus dem Original erstellte transparente Logo-Datei liegt **jetzt direkt im GitHub-Repository**: `hbb-hintergrund-v01/assets/coffee_brothers_original.png`.
+
+Eine weitere Kopie liegt auf Google Drive unter `HBBSignage/Work/CoffeeBrothers_Original_Transparent_800.png`.
+
+**Niemals erneut nach einem anderen Logo suchen oder eine Schrift als Ersatz verwenden**, solange diese Originaldatei vorhanden ist.
+
+## 3. Kaffee / Inhalt: getrennte Baustelle
+
+- `kaffee-v04/index.html` ist die ältere Kaffee-Arbeitsgrundlage mit drei Gläsern, Originalschrift und Leuchteffekt. **Sie enthält noch eine PNG mit eingebautem Hintergrundlogo und darf deshalb NICHT zusätzlich direkt über das neue Logo gelegt werden.**
+- `index.html` ist die frühere freigegebene Gesamtgrafik/Schriftreferenz mit älteren Produktbildern.
+- `kaffee-html/index.html` ist eine weitere frühere HTML-Testfassung mit drei Gläsern, aber anderer Hintergrund-/Schriftumsetzung.
+- Für eine neue Kaffee-Tafel: den bestätigten **Hintergrund V01** als unabhängige HTML-Ebene nutzen und dann nur die benötigten Glas-, Schrift- und Preis-Ebenen getrennt darüber aufbauen. Preise vor Produktion prüfen. Die drei Glasdateien sind `kaffee-html/assets/latte-original.png`, `kaffee-html/assets/crema-glas.png`, `kaffee-html/assets/cappuccino-glas.png`. Die Freistellung des Café-Crema-Glases ist noch zu kontrollieren.
+- Freigegebene Leuchteffekt-Pixeldateien: `assets/glow_*.png`.
+
+## 4. Franzbrötchen / Inhalt: getrennte Baustelle
+
+- Historischer unfertiger Versuch: `franzbroetchen/index.html`; **nicht** als Hintergrundvorlage verwenden.
+- Freigestellte Gebäcke: `franzbroetchen/assets/franzbroetchen_gruppe_freigestellt.png`.
+- Gewünschte Reihenfolge: hinten Schoko, Mitte Streusel, vorne Klassisch.
+- Gebäck wirkte zuletzt zu flach. Nach freigegebenem Hintergrund nur die Gebäckebene korrigieren, nicht Hintergrund/Logo.
+
+## 5. Alte Fehlversuche / Archiv, NICHT weiterverwenden
+
+- `kaffee-v05/index.html`: verworfener Versuch mit doppeltem Logo.
+- `kaffee-v06/index.html`: verworfener Versuch mit gekipptem „HBB STORE“-Schriftzug statt dem grafischen Logo.
+- Freie Bildgenerierungen einer völlig neuen Kaffee-Tafel sind keine Referenz.
+
+## 6. Verbindlicher Workflow für alle weiteren Änderungen
+
+1. **Zuerst dieses Dokument lesen**, dann die aktuelle GitHub-HTML und ihre tatsächlichen Asset-Pfade prüfen.
+2. Auf Basis der letzten vom Nutzer **visuell bestätigten** Version arbeiten.
+3. Ein Änderungsauftrag betrifft nur eine Ebene, z.B. Hintergrundlogo ODER Gläser ODER Produktbild ODER Preise. Andere Ebenen unverändert lassen.
+4. Bei größeren Änderungen eine **neue versionierte HTML-Datei** anlegen. Keine Bilder neu generieren, wenn nur CSS geändert werden soll.
+5. Die benötigten Dateien **vollständig auf GitHub bereitstellen**, nicht nur lokale ZIPs oder Sandbox-Dateien. Die Seite muss unmittelbar über GitHub Pages geladen werden können.
+6. Prüfen, dass alle relativen Bildpfade auf im Repository vorhandene Dateien zeigen.
+7. **Den GitHub-Pages-Vorschaulink** zum Anschauen geben, nicht Code, Download oder ein generiertes Mockup.
+8. Erst nach visueller Bestätigung durch den Nutzer die neue Version in diesem Leitfaden als „freigegeben“ markieren.
+
+## 7. Technischer Sicherheitsstand
+
+Live-DailyPOS-Kasse darf durch Signage-Arbeiten nicht verändert werden. Preise sind historisch beispielhaft und müssen vor Livebetrieb anhand eines sicheren Read-only-Exports geprüft werden.

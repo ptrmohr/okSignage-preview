@@ -1,19 +1,11 @@
 # OK Signage – AKTUELLER STAND (verbindlicher Einstieg)
 
-**Neu: Kaffee V06 als Test mit EINEM Hintergrundlogo.** https://ptrmohr.github.io/okSignage-preview/kaffee-v06/ — `kaffee-v06/index.html`.
+**WIEDERHERGESTELLTER REFERENZSTAND: Kaffee V04.** V05 und V06 sind abgelehnte Logo-Experimente und dürfen NICHT als Basis weiterer Änderungen verwendet werden.
 
-V06 blendet die komplette alte PNG mit eingebranntem Logo aus, verwendet den sauberen Farbverlauf aus dem HTML-CSS und ein einziges nach hinten gekipptes Wasserzeichen. Da die Originalschrift Teil der PNG war, wird die Preistafel in V06 als HTML-Text eingeblendet, mit CSS-Leuchthervorhebung. Die genaue Typografie und optische Abstimmung sind **noch nicht freigegeben**. V04 und V05 bleiben als unveränderte Referenzen erhalten.
+**V04 Vorschau:** https://ptrmohr.github.io/okSignage-preview/kaffee-v04/
+**HTML:** `kaffee-v04/index.html`
 
-
-**Aktueller experimenteller Prüfstand: Kaffee V05 (3D-Wasserzeichen). V04 bleibt die unveränderte Ausgangsbasis. Keine visuelle Freigabe erteilt.**
-
-**V05 Vorschau:** https://ptrmohr.github.io/okSignage-preview/kaffee-v05/
-**V05 Quellcode:** `kaffee-v05/index.html`
-
-**WICHTIG:** Das Originallogo ist Bestandteil der großen PNG-Datei. V05 blendet testweise ein *zusätzliches* HTML-Wasserzeichen `HBB STORE` mit `rotateX(30deg)` und Fade ein, das per Kontrollkästchen ein-/ausgeschaltet werden kann. Das ist noch keine echte perspektivische Transformation des Original-Logos. Für eine korrekte Endfassung muss zuerst das originale Logo als eigene transparente Bild-Ebene isoliert und der Hintergrund darunter sauber rekonstruiert werden.
-
-**Vorschau:** https://ptrmohr.github.io/okSignage-preview/kaffee-v04/
-**Quellcode:** `kaffee-v04/index.html`
+**Korrekturauftrag (noch offen):** Das **originale grafische Hintergrundlogo** (nicht der Schriftzug „HBB STORE“) ausschließlich perspektivisch um etwa 30 Grad nach hinten kippen und leicht ausfaden. Kein zweites Logo hinzufügen, nicht die übrige Tafel verändern. Das Logo ist aktuell nicht als eigenständige transparente PNG im Repository nachweisbar. Vor neuer Version die Original-Logoebene wiederfinden oder sauber aus der vorhandenen Originalgrafik extrahieren. Keine erfundenen Logos oder Text-Wasserzeichen.
 
 ## Hintergrund und Schrift – feste Referenz
 - `assets/HBB_Kaffee_Arbeitsgrundlage_v2_Titel_10Prozent.png`: freigegebene vollständige Kaffee-Originalgrafik inklusive Logo, Schrift und ursprünglichem Produktbereich.
@@ -28,8 +20,9 @@ V06 blendet die komplette alte PNG mit eingebranntem Logo aus, verwendet den sau
 - In V04 als separate HTML-Ebenen eingebunden; die Café-Crema-Freistellung, Proportionen und alle drei Positionen sind noch zu prüfen.
 
 ## Versionen und Status
-- **V05 `kaffee-v05/index.html`: aktueller 3D-Test, nicht freigegeben.**
-- **V04 `kaffee-v04/index.html`: unveränderte Basis für den 3D-Test, nicht visuell freigegeben.**
+- **V05 `kaffee-v05/index.html`: verworfener Doppel-Logo-Test, NICHT aktuell.**
+- **V06 `kaffee-v06/index.html`: verworfener Text-Wasserzeichen-Test, NICHT aktuell.**
+- **V04 `kaffee-v04/index.html`: wiederhergestellte Referenzfassung; künftige Änderungen nur als Kopie und erst nach Sichtprüfung.**
 - `index.html`: archivierter Kaffee V02, Referenz für Originalgrafik, Schrift und Leuchten; ältere Fotos.
 - `kaffee-html/index.html`: archivierter V03-Test mit drei Glasdateien, aber nachgebautem Hintergrund.
 - `franzbroetchen/index.html`: unfertiger separater Entwurf; nicht aktuell als Hintergrundreferenz.

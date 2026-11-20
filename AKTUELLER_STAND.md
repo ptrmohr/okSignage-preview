@@ -1,7 +1,15 @@
 # OK Signage – START HIER / VERBINDLICHER PROJEKTLEITFADEN
 Stand: 20.11.2026
 
-## Neue Vorschau zum Prüfen: HBB-Hintergrund V02 (20.11.2026)
+## Neue Vorschau zum Prüfen: HBB-Hintergrund V03 (20.11.2026)
+
+**Browser-Link:** https://ptrmohr.github.io/okSignage-preview/hbb-hintergrund-v03/
+
+**Quelle:** `hbb-hintergrund-v03/index.html`. **Status: noch NICHT visuell freigegeben.**
+
+Von V02 ausschließlich die Position des originalen Engel-Logos um weitere 10 Prozentpunkte nach oben verschoben: `left:7%; top:-6%`. Der perspektivische Winkel von 30° auf der äußeren Ebene sowie die Uhrzeiger-Drehung der inneren Logoebene (120 Sekunden/Umdrehung) bleiben erhalten. V01 und V02 sind unverändert als Vergleich/Backup gespeichert. Das Original-Logo bleibt `hbb-hintergrund-v01/assets/coffee_brothers_original.png`.
+
+## Vorheriger Test: HBB-Hintergrund V02 (20.11.2026)
 
 **Browser-Link:** https://ptrmohr.github.io/okSignage-preview/hbb-hintergrund-v02/
 

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HBB Hintergrund V02 – Original-Engel, langsame Drehung</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;background:#171617;color:#e8d5c7;font:14px system-ui,sans-serif}
+.frame{position:relative;width:100%;aspect-ratio:1672/941;overflow:hidden;perspective:1400px;
+background:radial-gradient(ellipse 550px 730px at 16% 70%,#695a50 0%,#4f4543 48%,transparent 100%),radial-gradient(ellipse 1200px 950px at 80% -45%,#605655,transparent 72%),linear-gradient(130deg,#47413f,#47403f 58%,#413c3c)}
+.logo-perspective{position:absolute;left:7%;top:4%;width:112%;opacity:.16;transform-origin:50% 75%;transform:rotateX(30deg);pointer-events:none;user-select:none;
+mask-image:linear-gradient(to top,#000 42%,transparent 100%);
+-webkit-mask-image:linear-gradient(to top,#000 42%,transparent 100%)}
+.logo-spin{display:block;width:100%;height:auto;transform-origin:center center;animation:clockturn 120s linear infinite;filter:blur(.35px)}
+@keyframes clockturn{from{transform:rotate(-26deg)}to{transform:rotate(334deg)}}
+.note{max-width:1672px;margin:14px auto;padding:0 15px;color:#b5aba4}
+@media(prefers-reduced-motion:reduce){.logo-spin{animation:none;transform:rotate(-26deg)}}
+</style>
+</head>
+<body>
+<main class="frame"><div class="logo-perspective"><img class="logo-spin" src="../hbb-hintergrund-v01/assets/coffee_brothers_original.png" alt="Originales Brothers Coffee & Snacks Engel-Logo" draggable="false"></div></main>
+<div class="note">HBB Hintergrund V02 – Original-Logo, um 20 Prozentpunkte höher und 15 Prozentpunkte nach rechts, 30° perspektivisch gekippt, langsame Uhrzeigerdrehung (120 Sekunden). V01 bleibt unverändert.</div>
+</body></html>

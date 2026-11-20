@@ -14,28 +14,31 @@ html,body{margin:0;background:#151516;color:#ece3d7;font:14px/1.4 system-ui,-app
 .frame{width:100%;aspect-ratio:1672 / 941;position:relative;overflow:hidden;outline:1px solid #4a4040;box-shadow:0 15px 60px rgba(0,0,0,.45)}
 .design{position:absolute;top:0;left:0;width:1672px;height:941px;transform-origin:top left;overflow:hidden;user-select:none;background:#494340}
 .background{position:absolute;inset:0;background:radial-gradient(ellipse 550px 730px at 16% 70%,#695a50 0%,#4f4543 48%,transparent 100%),radial-gradient(ellipse 1200px 950px at 80% -45%,#605655,transparent 72%),linear-gradient(130deg,#47413f,#47403f 58%,#413c3c)}
-.grain{position:absolute;inset:0;opacity:.095;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.44' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath filter='url(%23n)' opacity='.28' d='M0 0h140v140H0z'/%3E%3C/svg%3E")}
-/* Exakt dieselbe Hintergrund-/Wasserzeichen-Definition wie in kaffee-html/index.html */
-.watermark{position:absolute;left:680px;top:275px;transform:rotate(-32deg);white-space:nowrap;font-size:190px;font-weight:900;letter-spacing:-13px;opacity:.043;color:#e7c0a7}
-/* Echte freigestellte Franzbrötchen als eigene oberste Bildebene. Keine zusammengesetzte Kaffee-Szene. */
+/* Hintergrund wie in kaffee-html; echtes Logo aus der freigegebenen Kaffee-Originaldatei */
+.brand-logo{position:absolute;left:0;top:0;width:520px;height:290px;background:url('../assets/HBB_Kaffee_Arbeitsgrundlage_v2_Titel_10Prozent.png') 0 0 / 1672px 941px no-repeat;pointer-events:none;mask-image:radial-gradient(ellipse at 36% 30%,#000 35%,transparent 79%);-webkit-mask-image:radial-gradient(ellipse at 36% 30%,#000 35%,transparent 79%)}
+/* Gebäck separat zuschaltbar; ursprüngliche freigestellte Datei nicht verformen oder neu rendern. */
 .pastries{position:absolute;left:85px;top:233px;width:1055px;height:auto;object-fit:contain;filter:drop-shadow(16px 29px 23px rgba(21,14,12,.32));pointer-events:none}
-.heading{position:absolute;left:740px;top:59px;color:var(--cream);font-family:Montserrat,Inter,"Arial Black","Segoe UI",Arial,sans-serif;font-size:94px;font-weight:850;line-height:1.12;letter-spacing:-.026em;white-space:nowrap}
+
+.controls{display:flex;gap:8px;justify-content:flex-end;margin-top:8px}.controls button{background:#302b29;border:1px solid #635750;color:#f0ddc9;border-radius:7px;padding:8px 12px;cursor:pointer}.controls button[aria-pressed="true"]{background:#e7c6a6;color:#241e1b}.pastries[hidden]{display:none}
 .footnote{width:min(96vw,1420px);margin:12px auto 35px;color:#aaa29d;font-size:12px}
 @media(max-width:700px){.toolbar{padding:8px}.footnote{padding:0 8px}}
 </style>
 </head>
 <body>
-<header class="toolbar"><strong>OK Signage · Franzbrötchen</strong><span>Getrennte Ebenen · 16:9 · nur Überschrift</span></header>
+<header class="toolbar"><strong>OK Signage · Franzbrötchen</strong><span>Modulare Vorschau · Hintergrund mit Original-Logo · ohne Text und Preise</span></header>
 <main class="workspace"><div class="frame" id="frame"><div class="design" id="design">
-<div class="background"></div><div class="grain"></div><div class="watermark" aria-hidden="true">HBB STORE</div>
+<div class="background"></div><div class="brand-logo" aria-hidden="true"></div>
 <img class="pastries" src="assets/franzbroetchen_gruppe_freigestellt.png" alt="Drei freigestellte Franzbrötchen" draggable="false">
-<div class="heading">Franzbrötchen</div>
-</div></div></main>
-<footer class="footnote">Franzbrötchen und Hintergrund liegen separat. Keine eingebrannte Kaffee-Tasse.</footer>
+
+</div></div><div class="controls" role="group" aria-label="Bildebenen"><button type="button" id="backgroundOnly" aria-pressed="false">Nur Hintergrund</button><button type="button" id="withPastries" aria-pressed="true">Hintergrund + Brötchen</button></div></main>
+<footer class="footnote">Zuerst Hintergrund und Original-Logo prüfen. Die freigestellten Brötchen sind unverändert und separat zuschaltbar.</footer>
 <script>
 'use strict';
 const frame=document.getElementById('frame'),design=document.getElementById('design');
 function resize(){design.style.transform='scale('+(frame.getBoundingClientRect().width/1672)+')'}
 window.addEventListener('resize',resize);resize();
+const pastries=document.querySelector('.pastries'),bgButton=document.getElementById('backgroundOnly'),pastryButton=document.getElementById('withPastries');
+function showPastries(visible){pastries.hidden=!visible;bgButton.setAttribute('aria-pressed',String(!visible));pastryButton.setAttribute('aria-pressed',String(visible))}
+bgButton.addEventListener('click',()=>showPastries(false));pastryButton.addEventListener('click',()=>showPastries(true));
 </script>
 </body></html>

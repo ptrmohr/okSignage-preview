@@ -1,6 +1,16 @@
 # OK Signage – START HIER / VERBINDLICHER PROJEKTLEITFADEN
 Stand: 20.11.2026
 
+## Neue Vorschau zum Prüfen: HBB-Hintergrund V02 (20.11.2026)
+
+**Browser-Link:** https://ptrmohr.github.io/okSignage-preview/hbb-hintergrund-v02/
+
+**Quelle:** `hbb-hintergrund-v02/index.html`. **Status: noch NICHT visuell freigegeben.**
+
+Auf Basis der freigegebenen V01: dasselbe Original-Engellogo (per relativem Asset-Pfad aus `hbb-hintergrund-v01/assets/coffee_brothers_original.png`), derselbe Farbverlauf. Die Logo-Ebene wurde von `top:24%;left:-8%` nach `top:4%;left:7%` verschoben. Das sind 20 bzw. 15 Prozentpunkte relativ zur Fläche, nicht prozentuale Verhältnisse. Zusätzlich dreht sich das runde Logo **im Uhrzeigersinn einmal in 120 Sekunden**, während es 30° perspektivisch zurückgekippt bleibt. Die Animation ist bei reduzierter Bewegung deaktiviert. Die V01 bleibt unverändert als Referenz.
+
+**Nächster Schritt:** V02 im Browser ansehen, nur Kippung, Bewegung und Position nach Nutzerfeedback ändern. Nicht die Originalgrafik generieren oder Hintergründe austauschen. Bei Bestätigung V02 als neue freigegebene Hintergrundbasis markieren.
+
 ## 1. Aktuell bestätigte Gestaltung: HBB-Hintergrund V01
 
 **Live-Vorschau:** https://ptrmohr.github.io/okSignage-preview/hbb-hintergrund-v01/

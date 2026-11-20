@@ -125,7 +125,6 @@ kbd{padding:2px 5px;background:#302d2d;border:1px solid #514b48;border-radius:4p
 </div>
 <script>
 'use strict';
-$('logo3dToggle')?.addEventListener('change',e=>{$('logo3d').hidden=!e.target.checked;});
 const DATA = [
  {key:'filter',name:'Filterkaffee',v:['1,00 €','1,50 €','2,00 €'],top:275},
  {key:'crema',name:'Café Crema',v:['1,80 €','2,50 €','2,90 €'],top:334},
@@ -138,6 +137,7 @@ const DATA = [
 const rotation=['crema','cappuccino','latte'];
 let current='latte',timer=null,htmlMode=false;
 const $=id=>document.getElementById(id);
+$('logo3dToggle').addEventListener('change',e=>{$('logo3d').hidden=!e.target.checked;});
 const lines=$('menuLines'), zones=$('interactiveZones'), brightened=$('brightenedText');
 for(const item of DATA){
  const row=document.createElement('div');row.className='menuline';row.style.top=`${item.top}px`;

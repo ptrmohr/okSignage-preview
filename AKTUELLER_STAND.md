@@ -1,5 +1,15 @@
 # OK Signage – VERBINDLICHER STARTPUNKT (20.11.2026)
 
+## AKTUELLER TESTSTAND: HBB-Kaffee V12 – 20.11.2026
+
+**Live-HTML:** https://ptrmohr.github.io/okSignage-preview/hbb-kaffee-v12/
+
+**Kaffee-HTML:** `hbb-kaffee-v12/index.html` · **Preisdaten:** `hbb-kaffee-v12/preise.xml` · **geänderter Hintergrund, separat:** `hbb-hintergrund-v12/index.html`
+
+V12 ist aus V11 entstanden, während der freigegebene V10-Hintergrund unangetastet erhalten bleibt. Die hintere Original-Logoebene bleibt unverändert als Logo-Asset, liegt nun bei `top:-16%;left:7%`, mit `rotateX(35deg)` statt 30°, und dreht weiterhin alle 120 Sekunden im Uhrzeigersinn. **V12 startet den automatischen Wechsel der drei vorhandenen Kaffee-Gläser und der leuchtenden Produktzeile ohne Buttons**, Intervall 5,5 Sekunden. Der sichtbare Player zeigt keine Toolbar oder Bedienknöpfe. Preise sind noch historische Musterdaten und nicht für Livebetrieb geprüft.
+
+**Nächste Aufgabe:** V12 im Browser visuell prüfen und nach Feedback nur gezielte Positionierungen ändern. Bei Zustimmung V12 freigeben. **V10 und V11 unbedingt behalten.**
+
 ## FREIGEGEBEN: HBB-Hintergrund V10
 **Vorschau:** https://ptrmohr.github.io/okSignage-preview/hbb-hintergrund-v10/
 **HTML:** `hbb-hintergrund-v10/index.html`

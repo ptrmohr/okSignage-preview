@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HBB Franzbrötchen V06 – Dauerangebot</title>
+<style>
+:root{--cream:#efc7a1;--dark:#32201b}
+*{box-sizing:border-box}
+html,body{margin:0;background:#151516;color:#ece3dc;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.workspace{width:min(100vw,1672px);margin:0 auto}
+.frame{aspect-ratio:1672/941;width:100%;position:relative;overflow:hidden}
+.design{position:absolute;top:0;left:0;width:1672px;height:941px;transform-origin:top left;overflow:hidden;user-select:none;isolation:isolate}
+.backgroundFrame{position:absolute;inset:0;width:1672px;height:941px;border:0;pointer-events:none;background:transparent}
+.heading{position:absolute;left:118px;top:29px;margin:0;z-index:2;font-size:94px;line-height:1.1;font-weight:850;letter-spacing:-2.8px;color:var(--cream);white-space:nowrap;font-family:Montserrat,Inter,"Arial Black","Segoe UI",Arial,sans-serif}
+.pastries{position:absolute;left:36px;top:151px;width:530px;height:777px;object-fit:fill;filter:drop-shadow(12px 20px 15px #21120d55);pointer-events:none}
+.names{position:absolute;left:568px;top:205px;width:386px;height:682px;display:flex;flex-direction:column;justify-content:space-around;font-family:Montserrat,Inter,"Arial Black","Segoe UI",Arial,sans-serif;color:#f5d2b0}
+.name{font-size:58px;font-weight:850;letter-spacing:-1.8px;text-shadow:0 3px 8px #23110e80}
+.offer{position:absolute;left:885px;top:160px;width:810px;height:730px;display:flex;align-items:center;justify-content:center;transform:rotate(-30deg);filter:drop-shadow(0px 19px 13px #1b100a83)}
+.offerShape{position:absolute;inset:0;background:#f0935e;clip-path:path('M405.0 30.0 Q454.0 184.6 572.0 63.2 Q542.2 220.4 706.0 156.1 Q603.2 284.7 780.3 290.5 Q625.0 365.0 780.3 439.5 Q603.2 445.3 706.0 573.9 Q542.2 509.6 572.0 666.8 Q454.0 545.4 405.0 700.0 Q356.0 545.4 238.0 666.8 Q267.8 509.6 104.0 573.9 Q206.8 445.3 29.7 439.5 Q185.0 365.0 29.7 290.5 Q206.8 284.7 104.0 156.1 Q267.8 220.4 238.0 63.2 Q356.0 184.6 405.0 30.0 Z');border:0}
+.offerInner{display:none;position:absolute;inset:38px;clip-path:polygon(50% 0%,59% 10%,70% 3%,76% 16%,89% 13%,90% 27%,100% 34%,93% 45%,100% 57%,88% 66%,90% 81%,75% 83%,69% 96%,56% 91%,46% 100%,37% 89%,22% 96%,18% 83%,4% 78%,11% 64%,0% 55%,8% 43%,0% 31%,12% 25%,15% 11%,29% 14%,37% 2%);background:#fce7b8}
+.offerText{position:relative;text-align:center;color:#fff;font-family:Montserrat,Inter,"Arial Black",Arial,sans-serif;transform:none;width:82%;line-height:1.05}
+.offerTitle{font-size:50px;font-weight:950;letter-spacing:-2px}
+.offerRetro{font-size:26px;font-weight:790;margin:10px 0 25px}
+.price{font-size:41px;font-weight:900;white-space:nowrap;margin:13px 0}
+.price strong{font-size:74px;letter-spacing:-3px}
+.offerSmall{font-size:20px;font-weight:700;line-height:1.2;margin-top:15px}
+</style>
+</head>
+<body>
+<main class="workspace"><div class="frame" id="frame"><div class="design" id="design">
+<iframe class="backgroundFrame" src="../hbb-hintergrund-v12/" title="Unveränderter, animierter HBB-Originalhintergrund" tabindex="-1" aria-hidden="true"></iframe>
+<h1 class="heading" id="headline">Franzbrötchen</h1>
+<img class="pastries" src="../hbb-franzbroetchen-v02/assets/franzbroetchen_draufsicht_v02.png" alt="Drei Franzbrötchen in Draufsicht, untereinander: klassisch, Schoko und Streusel" draggable="false">
+<div class="names" aria-label="Franzbrötchensorten"><div class="name" id="name0">Klassisch</div><div class="name" id="name1">Schoko</div><div class="name" id="name2">Streusel</div></div>
+<div class="offer" aria-label="Dauerangebot Franzbrötchen"><div class="offerShape"></div><div class="offerInner"></div><div class="offerText">
+<div class="offerTitle">DAUERANGEBOT</div>
+<div class="offerRetro">Preise wie in den 90ern!</div>
+<div class="price"><span>1 Stück </span><strong id="singlePrice">1,00 €</strong></div>
+<div class="price"><span>3 Stück </span><strong id="triplePrice">2,50 €</strong></div>
+<div class="offerSmall">Drei Sorten zur Wahl</div>
+</div></div>
+</div></div></main>
+<script>
+'use strict';
+const frame=document.getElementById('frame'),design=document.getElementById('design');
+function resize(){design.style.transform='scale('+(frame.getBoundingClientRect().width/1672)+')'}
+window.addEventListener('resize',resize);resize();
+(async()=>{try{const r=await fetch('../hbb-franzbroetchen-v02/preise.xml',{cache:'no-store'});if(!r.ok)throw Error('XML HTTP '+r.status);
+const xml=new DOMParser().parseFromString(await r.text(),'application/xml');if(xml.querySelector('parsererror'))throw Error('Invalid XML');
+const root=xml.querySelector('signage');if(!root)throw Error('No signage root');
+const heading=root.querySelector('heading')?.textContent?.trim();if(heading)document.getElementById('headline').textContent=heading;
+const products=[...root.querySelectorAll('products > product')];
+for(const [i,id] of ['klassisch','schoko','streusel'].entries()){const name=products.find(p=>p.getAttribute('id')===id)?.querySelector('name')?.textContent?.trim();if(name)document.getElementById('name'+i).textContent=name}
+const base=products.find(p=>p.getAttribute('id')==='klassisch');if(base){document.getElementById('singlePrice').textContent=base.querySelector('single')?.textContent?.trim()||'1,00 €';document.getElementById('triplePrice').textContent=base.querySelector('triple')?.textContent?.trim()||'2,50 €'}
+}catch(e){console.warn('Franzbrötchen-XML konnte nicht geladen werden; Vorschaudaten bleiben:',e)}})();
+</script>
+</body></html>

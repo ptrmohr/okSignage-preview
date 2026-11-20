@@ -7,6 +7,13 @@
 
 **Korrekturauftrag (noch offen):** Das **originale grafische Hintergrundlogo** (nicht der Schriftzug „HBB STORE“) ausschließlich perspektivisch um etwa 30 Grad nach hinten kippen und leicht ausfaden. Kein zweites Logo hinzufügen, nicht die übrige Tafel verändern. Das Logo ist aktuell nicht als eigenständige transparente PNG im Repository nachweisbar. Vor neuer Version die Original-Logoebene wiederfinden oder sauber aus der vorhandenen Originalgrafik extrahieren. Keine erfundenen Logos oder Text-Wasserzeichen.
 
+## Original-Logo jetzt eindeutig gefunden (20.11.2026)
+
+- Google Drive → `HBBSignage/HBBLogosAi.zip`: https://drive.google.com/file/d/16BQPivd20cs5w6iTc_FuA1tvThE7aq_x/view
+- Datei darin: `Engel-Logo_peetRoundedSorted.ai` – **vollständiges rundes BROTHERS COFFEE & SNACKS Logo mit Engelmotiv**. Alternative Variante `Engel-Logo_peetRounded.ai`; außerdem getrennte Varianten `Engel-Logo_peet_lettersOnly.ai` und `Engel-Logo_peet_noLetters.ai`.
+- Die AI-Datei besitzt eine PDF-kompatible Vektorvorschau. Eine transparente PNG wurde daraus lokal erstellt; eigenständige HTML-Testvorschau (30° 3D-Kippung, Deckkraft regelbar) ist vorhanden. Das Logo wurde noch **nicht auf GitHub veröffentlicht**.
+- Keine nachgebaute „HBB STORE“-Schrift mehr anstelle des Engels verwenden. Keine Doppelbelegung mit dem in älteren Kaffee-PNGs vorhandenen Wasserzeichen. Für die Freigabe echte Logoebene vor sauberem Hintergrund verwenden.
+
 ## Hintergrund und Schrift – feste Referenz
 - `assets/HBB_Kaffee_Arbeitsgrundlage_v2_Titel_10Prozent.png`: freigegebene vollständige Kaffee-Originalgrafik inklusive Logo, Schrift und ursprünglichem Produktbereich.
 - `assets/glow_*.png`: isolierte Schriftpixel für die Leucht-Hervorhebung.

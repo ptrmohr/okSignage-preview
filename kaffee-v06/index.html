@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OK Signage · Kaffee V06 · sauberer Hintergrund mit einem 3D-Logo</title>
+<style>
+:root{color-scheme:dark;--cream:#efc7a1;--ink:#252222}
+*{box-sizing:border-box}
+html,body{margin:0;background:#151516;color:#ece3d7;font:14px/1.4 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+body{min-height:100vh}
+.toolbar{position:relative;z-index:3;max-width:1290px;margin:auto;padding:15px 14px 8px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.title{margin-right:auto;display:flex;flex-flow:column;gap:0}.title b{font-size:17px}.title span{font-size:12px;color:#aeaaa5}
+.controls{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+button{border:1px solid #484447;background:#2b2929;border-radius:10px;color:#eee8e4;padding:9px 14px;cursor:pointer;font-weight:600;font-size:13px}
+button:hover{background:#3a3636}button.active{background:#e0c1a5;color:#261f1a;border-color:#e0c1a5}
+button:focus-visible{outline:3px solid #ddd;outline-offset:2px}
+.switch{display:inline-flex;gap:5px;align-items:center;font-size:12px;color:#bbb9b6;padding:0 6px}
+.switch input{accent-color:#d4bdab}
+.workspace{width:min(96vw,1420px);margin:9px auto 0;}
+.frame{width:100%;aspect-ratio:1672 / 941;position:relative;overflow:hidden;outline:1px solid #4a4040;background:#45403d;box-shadow:0 15px 60px rgba(0,0,0,.45)}
+.design{position:absolute;top:0;left:0;width:1672px;height:941px;transform-origin:top left;overflow:hidden;user-select:none}
+.board-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+#htmlBackground,#textOverlay{display:none}
+#photoMotion{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;clip-path:inset(0 70% 0 0);pointer-events:none;opacity:0;transition:opacity .35s ease}
+#photoMotion.enabled{opacity:1}
+/* Nur der linke Produktbildbereich: Fotos für Café Crema und Cappuccino.
+   Alle Pixel der freigegebenen Grundgrafik bleiben als eigene Ebene erhalten. */
+/* Freigestellte Produktfotos als eigene Ebenen: keine fremden Hintergründe. */
+.drink-clean{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0;transition:opacity .45s ease}
+.drink-clean.selected{opacity:1}
+.drink-shadow{position:absolute;left:84px;top:745px;width:350px;height:42px;border-radius:50%;background:rgba(27,21,18,.40);filter:blur(20px);opacity:0;pointer-events:none;transition:opacity .45s ease}
+.drink-shadow.selected{opacity:1}
+.drink-photo{position:absolute;display:block;height:auto;pointer-events:none;opacity:0;transition:opacity .45s ease;filter:drop-shadow(6px 16px 14px rgba(20,13,10,.14))}
+.drink-photo[data-photo="crema"]{left:53px;top:212px;width:478px;max-height:637px;object-fit:contain}
+.drink-photo[data-photo="cappuccino"]{left:53px;top:212px;width:478px;max-height:637px;object-fit:contain}
+.drink-photo[data-photo="latte"]{left:105px;top:218px;width:367px;max-height:620px;object-fit:contain}
+.drink-photo.selected{opacity:1}
+/* Pixelgenaue, isolierte Schrift-Pixel aus der freigegebenen Originalgrafik.
+   Kein Rechteck, keine Neusetzen der Originalschrift. */
+.text-brightening {position:absolute;left:551px;width:1042px;height:57px;opacity:0;
+ pointer-events:none;transition:opacity .42s ease;
+ filter:drop-shadow(0 0 5px rgba(255,239,195,.52)) drop-shadow(0 0 11px rgba(255,246,211,.16));
+}
+.text-brightening.selected{opacity:1}
+.html-text .menuline{transition:color .42s ease,text-shadow .42s ease}
+.html-text .menuline.selected{color:#fff9e9;text-shadow:0 0 6px rgba(255,236,184,.58),0 0 14px rgba(255,245,214,.28)}
+/* Echttext-Modus: rasterisierte Preisschrift durch DOM-Text ersetzen. */
+.html-text{position:absolute;inset:0;display:none;color:var(--cream);font-family:Montserrat,Inter,"Arial Black","Segoe UI",Arial,sans-serif;font-weight:800;letter-spacing:-.018em;text-shadow:0 1px 0 rgba(20,14,10,.05);font-size:43px;line-height:1.13;}
+.html-text .hdr,.html-text .menuline,.html-text .espresso,.html-text .milk{position:absolute;display:grid;align-items:center;white-space:nowrap}
+.html-text .hdr{left:561px;top:203px;grid-template-columns:422px 219px 238px 1fr;width:1015px;font-size:43px}
+.html-text .hdr span:not(:first-child){text-align:left}
+.html-text .menuline{left:563px;width:1010px;height:52px;grid-template-columns:422px 219px 219px 1fr;font-size:41px}
+.html-text .espresso{left:564px;top:675px;width:805px;height:120px;font-size:42px;grid-template-columns:423px 222px 1fr;grid-template-rows:54px 55px}
+.html-text .espresso .val{text-align:left}
+.html-text .milk{left:558px;top:813px;display:flex;gap:80px;font-size:36px;font-style:italic;letter-spacing:-.028em}
+#interactiveZones{position:absolute;inset:0;pointer-events:none}
+.hit{position:absolute;left:551px;width:1027px;height:55px;pointer-events:auto;cursor:pointer;background:none;border:0;padding:0;border-radius:14px;outline-offset:-4px}
+.hit:hover{background:transparent}
+.footnote{width:min(96vw,1420px);margin:12px auto 35px;color:#aaa29d;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;font-size:12px}
+kbd{padding:2px 5px;background:#302d2d;border:1px solid #514b48;border-radius:4px;font:inherit}
+.status{font-size:13px;color:#dbc3b1}
+@media (max-width:700px){.toolbar{padding:8px}.controls button{padding:7px 9px;font-size:12px}.title{width:100%}.footnote{padding:0 8px}}
+
+/* V06: Original-PNG mit eingebranntem Logo ist deaktiviert. Ein Logo auf eigenem Verlauf. */
+.logo3d{
+ position:absolute;left:600px;top:128px;width:1050px;height:440px;
+ pointer-events:none;z-index:1;transform-origin:50% 78%;
+ transform:perspective(1400px) rotateZ(-32deg) rotateX(30deg);
+ opacity:.16;filter:blur(.45px);
+ font:900 190px/1 Montserrat,Inter,"Arial Black","Segoe UI",Arial,sans-serif;
+ letter-spacing:-12px;color:#e7c0a7;white-space:nowrap;
+ -webkit-mask-image:linear-gradient(to top,rgba(0,0,0,.8),rgba(0,0,0,.08));
+ mask-image:linear-gradient(to top,rgba(0,0,0,.8),rgba(0,0,0,.08));
+}
+.logo3d span{display:block;transform:translateY(95px)}
+.logo3d[hidden]{display:none}
+.design{background:radial-gradient(ellipse 550px 730px at 16% 70%,#695a50 0%,#4f4543 48%,transparent 100%),radial-gradient(ellipse 1200px 950px at 80% -45%,#605655,transparent 72%),linear-gradient(130deg,#47413f,#47403f 58%,#413c3c)}
+#originalBackground,#htmlBackground,#drinkClean,#brightenedText{display:none!important}
+.html-text{display:block!important}
+.html-text .menuline{z-index:2}
+.html-text .menuline.selected{color:#fff9e9;text-shadow:0 0 6px rgba(255,236,184,.75),0 0 15px rgba(255,245,214,.5)}
+.logo3d{z-index:0}
+.drink-photo,.drink-shadow{z-index:2}
+#interactiveZones{z-index:4}
+</style>
+</head>
+<body>
+<div class="toolbar">
+ <div class="title"><b>OK Signage · Kaffee</b><span>V06 · ein Logo · sauberer HTML-Hintergrund · drei Gläser</span></div>
+ <div class="controls" role="group" aria-label="Hervorgehobenes Getränk">
+  <button type="button" data-item="crema">Café Crema</button>
+  <button type="button" data-item="cappuccino">Cappuccino</button>
+  <button type="button" data-item="latte" class="active">Latte Macchiato</button>
+ </div>
+ <div class="controls">
+  <button id="auto" type="button" aria-pressed="false">▶ Auto-Wechsel</button>
+  
+  <label class="switch"><input id="logo3dToggle" type="checkbox" checked> Logo einblenden</label>
+  
+ </div>
+</div>
+<div class="workspace">
+ <div class="frame" id="frame">
+  <div class="design" id="design">
+   <!-- Original bleibt pixelgenau erhalten. Die gewählte Schrift wird separat aufgehellt. -->
+   <img id="originalBackground" class="board-image" src="../assets/HBB_Kaffee_Arbeitsgrundlage_v2_Titel_10Prozent.png" alt="Freigegebene Kaffee-Vorlage" draggable="false">
+   <!-- Optional: aus vorhandener Vorlage algorithmisch entfernte Tabellen-Texte. Hintergrundeinzelheiten im Testmodus noch nicht final. -->
+   <img id="htmlBackground" class="board-image" src="../assets/kaffee_hintergrund_ohne_preise.png" alt="" draggable="false">
+   
+   <div class="logo3d" id="logo3d" aria-hidden="true"><span>HBB STORE</span></div>
+   <!-- Austauschbereich für die linke Fotofläche; die Grundgrafik bleibt unverändert. -->
+   <img id="drinkClean" class="drink-clean" src="../assets/OKSignage_Hintergrund_Freigestellt.png" alt="" draggable="false">
+   <div id="drinkShadow" class="drink-shadow" aria-hidden="true"></div>
+   <img class="drink-photo" data-photo="crema" src="../kaffee-html/assets/crema-glas.png" alt="Café Crema im Glas" draggable="false">
+   <img class="drink-photo" data-photo="cappuccino" src="../kaffee-html/assets/cappuccino-glas.png" alt="Cappuccino im Glas" draggable="false">
+   <img class="drink-photo" data-photo="latte" src="../kaffee-html/assets/latte-original.png" alt="Latte Macchiato im Glas" draggable="false">
+   <div id="brightenedText" aria-hidden="true"></div>
+   <div id="htmlText" class="html-text" aria-hidden="true">
+    <div class="hdr"><span>Produkt</span><span>Klein</span><span>Mittel</span><span>Groß</span></div>
+    <div id="menuLines"></div>
+    <div class="espresso"><span></span><span>Einfach</span><span>Doppelt</span><span>Espresso</span><span>1,80 €</span><span>2,50 €</span></div>
+    <div class="milk"><span>Hafermilch +0,50 €</span><span>Mandelmilch +0,50 €</span></div>
+   </div>
+   <div id="interactiveZones"></div>
+  </div>
+ </div>
+</div>
+<div class="footnote">
+ <span id="status" class="status">V06: echter leerer Farbverlauf mit nur einem Logo</span>
+ <span>V06: Alte PNG mit eingebranntem Logo ausgeblendet. Preistext jetzt als HTML, damit kein zweites Logo erscheint. Taste <kbd>Leertaste</kbd>: Wechsel.</span>
+</div>
+<script>
+'use strict';
+const DATA = [
+ {key:'filter',name:'Filterkaffee',v:['1,00 €','1,50 €','2,00 €'],top:275},
+ {key:'crema',name:'Café Crema',v:['1,80 €','2,50 €','2,90 €'],top:334},
+ {key:'cappuccino',name:'Cappuccino',v:['1,80 €','2,50 €','2,90 €'],top:388},
+ {key:'milk',name:'Milchkaffee',v:['1,80 €','2,50 €','2,90 €'],top:442},
+ {key:'latte',name:'Latte Macchiato',v:['1,80 €','2,50 €','2,90 €'],top:495},
+ {key:'tea',name:'Tee',v:['1,80 €','2,50 €','2,90 €'],top:548},
+ {key:'cocoa',name:'Kakao',v:['1,80 €','2,50 €','2,90 €'],top:602}
+];
+const rotation=['crema','cappuccino','latte'];
+let current='latte',timer=null;
+const $=id=>document.getElementById(id);
+$('logo3dToggle').addEventListener('change',e=>{$('logo3d').hidden=!e.target.checked;});
+const lines=$('menuLines'), zones=$('interactiveZones'), brightened=$('brightenedText');
+for(const item of DATA){
+ const row=document.createElement('div');row.className='menuline';row.style.top=`${item.top}px`;
+ for(const txt of [item.name,...item.v]){const sp=document.createElement('span');sp.textContent=txt;row.appendChild(sp);}
+ row.dataset.key=item.key;lines.appendChild(row);
+ const glow=document.createElement('img');glow.className='text-brightening';glow.dataset.key=item.key;glow.src=`../assets/glow_${item.key}.png`;glow.style.top=`${item.top-5}px`;glow.alt='';glow.draggable=false;brightened.appendChild(glow);
+ const hit=document.createElement('button');hit.className='hit';hit.type='button';hit.title=item.name;hit.style.top=`${item.top-4}px`;hit.setAttribute('aria-label',`${item.name} hervorheben`);
+ hit.addEventListener('click',()=>{choose(item.key);stopAuto();});zones.appendChild(hit);
+}
+function resize(){const bounds=$('frame').getBoundingClientRect();$('design').style.transform=`scale(${bounds.width/1672})`;}
+window.addEventListener('resize',resize);resize();
+function choose(key){
+ const item=DATA.find(d=>d.key===key);if(!item)return;
+ current=key;
+ document.querySelectorAll('.text-brightening').forEach(el=>el.classList.toggle('selected',el.dataset.key===key));
+ document.querySelectorAll('.menuline').forEach(el=>el.classList.toggle('selected',el.dataset.key===key));
+ document.querySelectorAll('[data-item]').forEach(el=>el.classList.toggle('active',el.dataset.item===key));
+ const hasCutout=false; // V06: keine Originalgrafik und keine alte Tasse abzudecken
+ $('drinkClean').classList.toggle('selected',hasCutout);
+ $('drinkShadow').classList.toggle('selected',hasCutout);
+ document.querySelectorAll('.drink-photo').forEach(el=>el.classList.toggle('selected',el.dataset.photo===key));
+ $('status').textContent=`${item.name} hervorgehoben · `+('V06: ein Hintergrundlogo und drei separate Gläser.');
+}
+function stopAuto(){if(timer){clearInterval(timer);timer=null;}$('auto').textContent='▶ Auto-Wechsel';$('auto').setAttribute('aria-pressed','false');}
+function next(){let i=rotation.indexOf(current);choose(rotation[(i+1)%rotation.length]);}
+$('auto').addEventListener('click',()=>{if(timer){stopAuto();return;} next();timer=setInterval(next,5500);$('auto').textContent='■ Auto stoppen';$('auto').setAttribute('aria-pressed','true');});
+document.querySelectorAll('[data-item]').forEach(b=>b.addEventListener('click',()=>{choose(b.dataset.item);stopAuto();}));
+document.addEventListener('keydown',e=>{if(e.code==='Space'&& e.target.tagName!=='BUTTON'&&e.target.tagName!=='INPUT'){e.preventDefault();next();stopAuto();}});
+choose('latte');
+</script>
+</body></html>

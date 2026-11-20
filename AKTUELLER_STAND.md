@@ -1,6 +1,6 @@
 # OK Signage – VERBINDLICHER STARTPUNKT (20.11.2026)
 
-## AKTUELLER TESTSTAND: HBB-Kaffee V12 – 20.11.2026
+## FREIGEGEBENER IST-STAND: HBB-Kaffee V12 – 20.11.2026
 
 **Live-HTML:** https://ptrmohr.github.io/okSignage-preview/hbb-kaffee-v12/
 
@@ -8,7 +8,7 @@
 
 V12 ist aus V11 entstanden, während der freigegebene V10-Hintergrund unangetastet erhalten bleibt. Die hintere Original-Logoebene bleibt unverändert als Logo-Asset, liegt nun bei `top:-16%;left:7%`, mit `rotateX(35deg)` statt 30°, und dreht weiterhin alle 120 Sekunden im Uhrzeigersinn. **V12 startet den automatischen Wechsel der drei vorhandenen Kaffee-Gläser und der leuchtenden Produktzeile ohne Buttons**, Intervall 5,5 Sekunden. Der sichtbare Player zeigt keine Toolbar oder Bedienknöpfe. Preise sind noch historische Musterdaten und nicht für Livebetrieb geprüft.
 
-**Nächste Aufgabe:** V12 im Browser visuell prüfen und nach Feedback nur gezielte Positionierungen ändern. Bei Zustimmung V12 freigeben. **V10 und V11 unbedingt behalten.**
+**Abnahme durch Nutzer am 20.11.2026:** V12 ist der verbindliche Ist-Stand. Einziger letzter Korrekturwunsch: Mouse-over-Leuchten entfernt. Der automatische Leuchteffekt auf der aktuell angezeigten Produktzeile bleibt erhalten. Kein sonstiger Eingriff in Logo, Farben, Perspektive, Gläser, Preise oder automatischen Wechsel. **V10 und V11 bleiben unverändert als gesicherte Referenzen.** Für weitere Änderungen neue Version V13 oder höher anlegen, V12 nicht überschreiben.
 
 ## FREIGEGEBEN: HBB-Hintergrund V10
 **Vorschau:** https://ptrmohr.github.io/okSignage-preview/hbb-hintergrund-v10/
@@ -23,7 +23,7 @@ Exakte Kopie der vom Nutzer ausdrücklich bestätigten Hintergrundversion V03. G
 
 V11 lädt **V10 unverändert als Hintergrund-iframe**, so dass keine zweite Logo-Ebene entsteht. Darüber: Café-Crema-/Cappuccino-/Latte-Macchiato-Gläser aus `kaffee-html/assets/`, HTML-Preistafel und leuchtende Auswahl aus dem bestehenden `kaffee-html/index.html`-Entwurf. Bestehende Glas-Freistellung und Schriftoptik noch prüfen, besonders Café Crema. Die XML-Werte wurden übernommen, nicht gegen DailyPOS validiert. Erst nach Nutzersichtprüfung V11 als freigegeben markieren.
 
-**Unverzichtbarer Workflow:** Neue Änderungen NUR an `hbb-kaffee-v11/` bzw. als neue Version, V10 bleibt eingefroren. Github Pages Link direkt geben, keine neu generierten Gesamtgrafiken, keine lokalen ZIPs und keine CSS-Blöcke als Ersatz für die Browser-Vorschau. Historische Fassungen bewahren.
+**Unverzichtbarer Workflow:** Neue Änderungen ausgehend von der freigegebenen `hbb-kaffee-v12/` ausschließlich als neue Version anlegen. V10 und V12 bleiben eingefroren. Github Pages Link direkt geben, keine neu generierten Gesamtgrafiken, keine lokalen ZIPs und keine CSS-Blöcke als Ersatz für die Browser-Vorschau. Historische Fassungen bewahren.
 
 ---
 Stand: 20.11.2026

@@ -1,5 +1,10 @@
 # OK Signage – AKTUELLER STAND (verbindlicher Einstieg)
 
+**Neu: Kaffee V06 als Test mit EINEM Hintergrundlogo.** https://ptrmohr.github.io/okSignage-preview/kaffee-v06/ — `kaffee-v06/index.html`.
+
+V06 blendet die komplette alte PNG mit eingebranntem Logo aus, verwendet den sauberen Farbverlauf aus dem HTML-CSS und ein einziges nach hinten gekipptes Wasserzeichen. Da die Originalschrift Teil der PNG war, wird die Preistafel in V06 als HTML-Text eingeblendet, mit CSS-Leuchthervorhebung. Die genaue Typografie und optische Abstimmung sind **noch nicht freigegeben**. V04 und V05 bleiben als unveränderte Referenzen erhalten.
+
+
 **Aktueller experimenteller Prüfstand: Kaffee V05 (3D-Wasserzeichen). V04 bleibt die unveränderte Ausgangsbasis. Keine visuelle Freigabe erteilt.**
 
 **V05 Vorschau:** https://ptrmohr.github.io/okSignage-preview/kaffee-v05/

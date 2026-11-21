@@ -18,7 +18,7 @@ html,body{margin:0;background:#151516;color:#ece3dc;font-family:system-ui,-apple
 #name0{top:255.5px}
 #name1{top:530.5px}
 #name2{top:805.5px}
-.offer{position:absolute;left:790px;top:160px;width:810px;height:730px;display:flex;align-items:center;justify-content:center;transform:rotate(-30deg) scale(.9);filter:drop-shadow(0px 19px 13px #1b100a83)}
+.offer{position:absolute;left:790px;top:160px;width:810px;height:730px;display:flex;align-items:center;justify-content:center;transform:rotate(-30deg) scale(.9);transform-origin:center center;animation:preisblase-puls 3.5s ease-in-out infinite;filter:drop-shadow(0px 19px 13px #1b100a83)}
 .offerShape{position:absolute;inset:0;transform:scaleX(1.25);transform-origin:center;background:#f0935e;clip-path:path('M405.0 30.0 Q454.0 184.6 572.0 63.2 Q542.2 220.4 706.0 156.1 Q603.2 284.7 780.3 290.5 Q625.0 365.0 780.3 439.5 Q603.2 445.3 706.0 573.9 Q542.2 509.6 572.0 666.8 Q454.0 545.4 405.0 700.0 Q356.0 545.4 238.0 666.8 Q267.8 509.6 104.0 573.9 Q206.8 445.3 29.7 439.5 Q185.0 365.0 29.7 290.5 Q206.8 284.7 104.0 156.1 Q267.8 220.4 238.0 63.2 Q356.0 184.6 405.0 30.0 Z');border:0}
 .offerInner{display:none;position:absolute;inset:38px;clip-path:polygon(50% 0%,59% 10%,70% 3%,76% 16%,89% 13%,90% 27%,100% 34%,93% 45%,100% 57%,88% 66%,90% 81%,75% 83%,69% 96%,56% 91%,46% 100%,37% 89%,22% 96%,18% 83%,4% 78%,11% 64%,0% 55%,8% 43%,0% 31%,12% 25%,15% 11%,29% 14%,37% 2%);background:#fce7b8}
 .offerText{position:absolute;left:112px;right:112px;top:150px;bottom:102px;text-align:center;color:#fff;font-family:Montserrat,Inter,"Arial Black",Arial,sans-serif;line-height:1.05;display:flex;flex-direction:column;justify-content:center}
@@ -27,6 +27,8 @@ html,body{margin:0;background:#151516;color:#ece3dc;font-family:system-ui,-apple
 .price{font-size:37px;font-weight:900;white-space:nowrap;margin:0;line-height:1.08}.price.first{text-align:left;padding-left:15px;margin-top:6px}.price.second{text-align:right;padding-right:15px;margin-top:-24px}.price span{display:block}.price strong{display:block}
 .price strong{font-size:65px;letter-spacing:-3px}.price.second span{font-size:49px}
 .offerSmall{font-size:20px;font-weight:700;line-height:1.2;margin-top:15px}
+@keyframes preisblase-puls{0%,100%{transform:rotate(-30deg) scale(.45)}50%{transform:rotate(-30deg) scale(.9)}}
+@media(prefers-reduced-motion:reduce){.offer{animation:none;transform:rotate(-30deg) scale(.9)}}
 </style>
 </head>
 <body>
